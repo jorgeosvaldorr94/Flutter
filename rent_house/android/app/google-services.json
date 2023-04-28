@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "727415567570",
+    "project_id": "rent-house-7cbbb",
+    "storage_bucket": "rent-house-7cbbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727415567570:android:91ccb5cd33d4042e6b690b",
+        "android_client_info": {
+          "package_name": "com.webligth.renthouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727415567570-0713arq2i7lcr12bv464m6gfrfakh1af.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.webligth.renthouse",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "727415567570-qidqendvsdlhu2m5hj3hjrn2m78a0nqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJEe4RWWSziN-sN7tZ-kOFhB91zW5SUm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727415567570-qidqendvsdlhu2m5hj3hjrn2m78a0nqf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "727415567570-6l5g1s5ovcc2nsf4rougk7ed06h7q8oc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.webligth.renthouse"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>727415567570-6l5g1s5ovcc2nsf4rougk7ed06h7q8oc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.727415567570-6l5g1s5ovcc2nsf4rougk7ed06h7q8oc</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>727415567570-0713arq2i7lcr12bv464m6gfrfakh1af.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDh0i45Y4k8WzM9nQ30Ge_z-Dk_sg89dl0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>727415567570</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.webligth.renthouse</string>
+	<key>PROJECT_ID</key>
+	<string>rent-house-7cbbb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rent-house-7cbbb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:727415567570:ios:d2a45b287d4ce6f96b690b</string>
+</dict>
+</plist>
