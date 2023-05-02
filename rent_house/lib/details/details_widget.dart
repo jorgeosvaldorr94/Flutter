@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/auth/firebase_auth/firebase_user_provider.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -69,88 +68,67 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          FlutterFlowIconButton(
-                            borderColor: Color(0xFF171818),
-                            borderRadius: 5.0,
-                            borderWidth: 1.0,
-                            buttonSize: 50.0,
-                            fillColor: FlutterFlowTheme.of(context).accent4,
-                            icon: Icon(
-                              Icons.arrow_back_rounded,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              size: 30.0,
-                            ),
-                            onPressed: () async {
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
                               context.safePop();
                             },
-                          ),
-                          if (loggedIn)
-                            Container(
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                              child: Visibility(
-                                visible: widget.itemHouse!.favorites!
-                                    .toList()
-                                    .contains(currentUserReference),
-                                child: FlutterFlowIconButton(
-                                  borderColor: Color(0xFF0F0E0E),
-                                  borderRadius: 5.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 50.0,
-                                  fillColor:
-                                      FlutterFlowTheme.of(context).accent4,
-                                  icon: Icon(
-                                    Icons.favorite_sharp,
-                                    color: FlutterFlowTheme.of(context).error,
-                                    size: 30.0,
-                                  ),
-                                  onPressed: () async {
-                                    final houseUpdateData = {
-                                      'favorites': FieldValue.arrayRemove(
-                                          [currentUserReference]),
-                                    };
-                                    await widget.itemHouse!.reference
-                                        .update(houseUpdateData);
-                                    context.safePop();
-                                  },
-                                ),
-                              ),
+                            child: FaIcon(
+                              FontAwesomeIcons.angleDoubleLeft,
+                              color: Colors.black,
+                              size: 40.0,
                             ),
-                          if (loggedIn)
-                            Container(
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                          ),
+                          if (!widget.itemHouse!.favorites!
+                              .toList()
+                              .contains(currentUserReference))
+                            FlutterFlowIconButton(
+                              borderColor: Color(0xFF0F0E0E),
+                              borderRadius: 5.0,
+                              borderWidth: 1.0,
+                              buttonSize: 50.0,
+                              fillColor: FlutterFlowTheme.of(context).accent4,
+                              icon: Icon(
+                                Icons.favorite_border,
+                                color: FlutterFlowTheme.of(context).error,
+                                size: 30.0,
                               ),
-                              child: Visibility(
-                                visible: !widget.itemHouse!.favorites!
-                                    .toList()
-                                    .contains(currentUserReference),
-                                child: FlutterFlowIconButton(
-                                  borderColor: Color(0xFF0F0E0E),
-                                  borderRadius: 5.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 50.0,
-                                  fillColor:
-                                      FlutterFlowTheme.of(context).accent4,
-                                  icon: Icon(
-                                    Icons.favorite_border,
-                                    color: FlutterFlowTheme.of(context).error,
-                                    size: 30.0,
-                                  ),
-                                  onPressed: () async {
-                                    final houseUpdateData = {
-                                      'favorites': FieldValue.arrayUnion(
-                                          [currentUserReference]),
-                                    };
-                                    await widget.itemHouse!.reference
-                                        .update(houseUpdateData);
-                                    context.safePop();
-                                  },
-                                ),
+                              onPressed: () async {
+                                final houseUpdateData = {
+                                  'favorites': FieldValue.arrayUnion(
+                                      [currentUserReference]),
+                                };
+                                await widget.itemHouse!.reference
+                                    .update(houseUpdateData);
+                                context.safePop();
+                              },
+                            ),
+                          if (widget.itemHouse!.favorites!
+                              .toList()
+                              .contains(currentUserReference))
+                            FlutterFlowIconButton(
+                              borderColor: Color(0xFF0F0E0E),
+                              borderRadius: 5.0,
+                              borderWidth: 1.0,
+                              buttonSize: 50.0,
+                              fillColor: FlutterFlowTheme.of(context).accent4,
+                              icon: Icon(
+                                Icons.favorite_sharp,
+                                color: FlutterFlowTheme.of(context).error,
+                                size: 30.0,
                               ),
+                              onPressed: () async {
+                                final houseUpdateData = {
+                                  'favorites': FieldValue.arrayRemove(
+                                      [currentUserReference]),
+                                };
+                                await widget.itemHouse!.reference
+                                    .update(houseUpdateData);
+                                context.safePop();
+                              },
                             ),
                         ],
                       ),

@@ -11,6 +11,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'house_admin_model.dart';
@@ -67,7 +68,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                     Align(
                       alignment: AlignmentDirectional(0.05, -0.97),
                       child: Image.asset(
-                        'assets/images/Bg3.png',
+                        'assets/images/Snap_2023-05-01_at_18.08.21.png',
                         width: double.infinity,
                         height: 280.0,
                         fit: BoxFit.cover,
@@ -96,103 +97,113 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Expanded(
-                                    child: TextFormField(
-                                      controller: _model.textController,
-                                      onChanged: (_) => EasyDebounce.debounce(
-                                        '_model.textController',
-                                        Duration(milliseconds: 2000),
-                                        () => setState(() {}),
-                                      ),
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelStyle: FlutterFlowTheme.of(context)
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.1,
+                                      child: TextFormField(
+                                        controller: _model.textController,
+                                        onChanged: (_) => EasyDebounce.debounce(
+                                          '_model.textController',
+                                          Duration(milliseconds: 2000),
+                                          () => setState(() {}),
+                                        ),
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Roboto',
+                                                    fontSize: 12.0,
+                                                  ),
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            'ortvir8z' /* Search... */,
+                                          ),
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyLarge
+                                              .override(
+                                                fontFamily: 'Roboto',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 12.0,
+                                              ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent1,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .overlay0,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                          ),
+                                          filled: true,
+                                          fillColor: Color(0x8AFFFFFF),
+                                          prefixIcon: Icon(
+                                            Icons.search,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 16.0,
+                                          ),
+                                          suffixIcon: _model.textController!
+                                                  .text.isNotEmpty
+                                              ? InkWell(
+                                                  onTap: () async {
+                                                    _model.textController
+                                                        ?.clear();
+                                                    setState(() {});
+                                                  },
+                                                  child: Icon(
+                                                    Icons.clear,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 22.0,
+                                                  ),
+                                                )
+                                              : null,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Roboto',
                                               fontSize: 12.0,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'ortvir8z' /* Search... */,
-                                        ),
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .override(
-                                              fontFamily: 'Roboto',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              fontSize: 12.0,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(16.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(16.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(16.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(16.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: Color(0x67FFFFFF),
-                                        prefixIcon: Icon(
-                                          Icons.search,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 16.0,
-                                        ),
-                                        suffixIcon: _model
-                                                .textController!.text.isNotEmpty
-                                            ? InkWell(
-                                                onTap: () async {
-                                                  _model.textController
-                                                      ?.clear();
-                                                  setState(() {});
-                                                },
-                                                child: Icon(
-                                                  Icons.clear,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 22.0,
-                                                ),
-                                              )
-                                            : null,
+                                        minLines: 1,
+                                        validator: _model
+                                            .textControllerValidator
+                                            .asValidator(context),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Roboto',
-                                            fontSize: 12.0,
-                                          ),
-                                      maxLines: null,
-                                      validator: _model.textControllerValidator
-                                          .asValidator(context),
                                     ),
                                   ),
                                 ],
@@ -200,7 +211,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 30.0, 16.0, 0.0),
+                                  16.0, 100.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -214,9 +225,10 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                     onTap: () async {
                                       context.pushNamed('MyProfile');
                                     },
-                                    child: Icon(
-                                      Icons.arrow_back_rounded,
-                                      color: Color(0xFFE0E0E0),
+                                    child: FaIcon(
+                                      FontAwesomeIcons.angleDoubleLeft,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent4,
                                       size: 40.0,
                                     ),
                                   ),
@@ -253,40 +265,6 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 5.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 30.0, 0.0, 0.0),
-                                    child: RatingBar.builder(
-                                      onRatingUpdate: (newValue) => setState(
-                                          () => _model.ratingBarFilterValue =
-                                              newValue),
-                                      itemBuilder: (context, index) => Icon(
-                                        Icons.star_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .warning,
-                                      ),
-                                      direction: Axis.horizontal,
-                                      initialRating:
-                                          _model.ratingBarFilterValue ??= 0.0,
-                                      unratedColor: Color(0xA6FFFFFF),
-                                      itemCount: 5,
-                                      itemPadding: EdgeInsets.fromLTRB(
-                                          10.0, 0.0, 10.0, 0.0),
-                                      itemSize: 35.0,
-                                      glowColor:
-                                          FlutterFlowTheme.of(context).warning,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 32.0, 0.0, 0.0),
                               child: Container(
                                 width: double.infinity,
@@ -316,14 +294,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                   0.0, 5.0, 0.0, 0.0),
                                           child:
                                               StreamBuilder<List<HouseRecord>>(
-                                            stream: queryHouseRecord(
-                                              queryBuilder: (houseRecord) =>
-                                                  houseRecord.where('quantity',
-                                                      isGreaterThanOrEqualTo:
-                                                          _model
-                                                              .ratingBarFilterValue
-                                                              ?.round()),
-                                            ),
+                                            stream: queryHouseRecord(),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {
@@ -646,55 +617,6 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                               ),
                                                                         ),
                                                                       ),
-                                                                    ),
-                                                                    Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              2.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              RatingBarIndicator(
-                                                                            itemBuilder: (context, index) =>
-                                                                                Icon(
-                                                                              Icons.star_rounded,
-                                                                              color: FlutterFlowTheme.of(context).tertiary,
-                                                                            ),
-                                                                            direction:
-                                                                                Axis.horizontal,
-                                                                            rating:
-                                                                                verticalListHouseRecord.quantity!.toDouble(),
-                                                                            unratedColor:
-                                                                                FlutterFlowTheme.of(context).accent2,
-                                                                            itemCount:
-                                                                                5,
-                                                                            itemSize:
-                                                                                16.0,
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              2.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            verticalListHouseRecord.quantity!.toString(),
-                                                                            textAlign:
-                                                                                TextAlign.start,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Poppins',
-                                                                                  fontSize: 12.0,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ],
                                                                     ),
                                                                   ],
                                                                 ),

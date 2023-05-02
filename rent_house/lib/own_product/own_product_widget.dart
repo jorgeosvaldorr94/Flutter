@@ -157,8 +157,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                               BorderRadius.circular(16.0),
                                         ),
                                         filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                        fillColor: Color(0x8AFFFFFF),
                                         prefixIcon: Icon(
                                           Icons.search,
                                           color: FlutterFlowTheme.of(context)
@@ -197,46 +196,39 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 25.0, 0.0, 0.0),
+                                  16.0, 25.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed('MyProfile');
-                                      },
-                                      child: Icon(
-                                        Icons.arrow_back_rounded,
-                                        color: Color(0xFFE0E0E0),
-                                        size: 40.0,
-                                      ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('MyProfile');
+                                    },
+                                    child: FaIcon(
+                                      FontAwesomeIcons.angleDoubleLeft,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent3,
+                                      size: 40.0,
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed('Home');
-                                      },
-                                      child: Icon(
-                                        Icons.house,
-                                        color: Color(0xFFE0E0E0),
-                                        size: 40.0,
-                                      ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('Home');
+                                    },
+                                    child: Icon(
+                                      Icons.house,
+                                      color: Color(0xFFE0E0E0),
+                                      size: 40.0,
                                     ),
                                   ),
                                 ],

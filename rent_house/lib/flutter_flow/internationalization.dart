@@ -186,6 +186,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add House',
       'es': '',
     },
+    'xf8fzlp3': {
+      'en': '0',
+      'es': '',
+    },
     'gyr2lqb1': {
       'en': 'Cinque Terre',
       'es': '',
@@ -538,30 +542,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jag7nvth': {
       'en': '',
-      'es': '',
-    },
-    '98oyq2z8': {
-      'en': 'Star Property',
-      'es': '',
-    },
-    'z077876p': {
-      'en': 'Rooms (2 or more)',
-      'es': '',
-    },
-    'an5vxx3o': {
-      'en': 'Heated',
-      'es': '',
-    },
-    'qie5e320': {
-      'en': 'Pool',
-      'es': '',
-    },
-    'j9yv5l0x': {
-      'en': 'Garage',
-      'es': '',
-    },
-    'uuiu0l26': {
-      'en': 'Additional services',
       'es': '',
     },
   },

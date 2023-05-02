@@ -1,16 +1,19 @@
-import '/auth/firebase_auth/firebase_user_provider.dart';
+import '/auth/base_auth_user_provider.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_model.dart';
@@ -66,7 +69,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     Align(
                       alignment: AlignmentDirectional(0.05, -1.0),
                       child: Image.asset(
-                        'assets/images/backgroud.png',
+                        'assets/images/Snap_2023-05-01_at_18.08.21.png',
                         width: double.infinity,
                         height: 300.0,
                         fit: BoxFit.cover,
@@ -156,8 +159,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               BorderRadius.circular(16.0),
                                         ),
                                         filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                        fillColor: Color(0x8AFFFFFF),
                                         prefixIcon: Icon(
                                           Icons.search,
                                           color: FlutterFlowTheme.of(context)
@@ -196,7 +198,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 14.0, 16.0, 14.0),
+                                  16.0, 20.0, 16.0, 14.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'zxbmywce' /* Explore the best rental houses... */,
@@ -214,7 +216,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
+                                  16.0, 30.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -488,6 +490,16 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                 ),
                                                               },
                                                             );
+
+                                                            final houseUpdateData =
+                                                                {
+                                                              'views': FieldValue
+                                                                  .increment(1),
+                                                            };
+                                                            await verticalListHouseRecord
+                                                                .reference
+                                                                .update(
+                                                                    houseUpdateData);
                                                           },
                                                           child: Column(
                                                             mainAxisSize:
@@ -502,43 +514,82 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     MainAxisAlignment
                                                                         .spaceEvenly,
                                                                 children: [
-                                                                  Hero(
-                                                                    tag: verticalListHouseRecord
-                                                                        .image!,
-                                                                    transitionOnUserGestures:
-                                                                        true,
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              12.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        verticalListHouseRecord
-                                                                            .image!,
-                                                                        width:
-                                                                            150.0,
-                                                                        height:
-                                                                            150.0,
-                                                                        fit: BoxFit
-                                                                            .cover,
+                                                                  Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      Hero(
+                                                                        tag: valueOrDefault<
+                                                                            String>(
+                                                                          verticalListHouseRecord
+                                                                              .image,
+                                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/nzpikfn3jrh3/Logo_Rent_House.png' +
+                                                                              '$verticalListIndex',
+                                                                        ),
+                                                                        transitionOnUserGestures:
+                                                                            true,
+                                                                        child:
+                                                                            ClipRRect(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(12.0),
+                                                                          child:
+                                                                              Image.network(
+                                                                            valueOrDefault<String>(
+                                                                              verticalListHouseRecord.image,
+                                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/nzpikfn3jrh3/Logo_Rent_House.png',
+                                                                            ),
+                                                                            width:
+                                                                                150.0,
+                                                                            height:
+                                                                                150.0,
+                                                                            fit:
+                                                                                BoxFit.cover,
+                                                                          ),
+                                                                        ),
                                                                       ),
-                                                                    ),
+                                                                      Text(
+                                                                        verticalListHouseRecord
+                                                                            .name!,
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .titleMedium
+                                                                            .override(
+                                                                              fontFamily: 'Roboto',
+                                                                              fontSize: 14.0,
+                                                                            ),
+                                                                      ),
+                                                                    ],
                                                                   ),
                                                                   Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
                                                                             .max,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .center,
                                                                     children: [
-                                                                      Text(
-                                                                        verticalListHouseRecord
-                                                                            .city!,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              fontSize: 12.0,
-                                                                            ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          verticalListHouseRecord
+                                                                              .city!,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Poppins',
+                                                                                fontSize: 14.0,
+                                                                              ),
+                                                                        ),
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -554,7 +605,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               .bodySmall
                                                                               .override(
                                                                                 fontFamily: 'Roboto',
-                                                                                fontSize: 10.0,
+                                                                                fontSize: 12.0,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -574,7 +625,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             verticalListHouseRecord.locality!,
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: 'Roboto',
-                                                                                  fontSize: 10.0,
+                                                                                  fontSize: 12.0,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -587,7 +638,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
-                                                                              2.0,
+                                                                              10.0,
                                                                               0.0,
                                                                               0.0),
                                                                           child:
@@ -621,47 +672,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                2.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                RatingBarIndicator(
-                                                                              itemBuilder: (context, index) => Icon(
-                                                                                Icons.star_rounded,
-                                                                                color: FlutterFlowTheme.of(context).tertiary,
-                                                                              ),
-                                                                              direction: Axis.horizontal,
-                                                                              rating: verticalListHouseRecord.quantity!.toDouble(),
-                                                                              unratedColor: FlutterFlowTheme.of(context).accent2,
-                                                                              itemCount: 5,
-                                                                              itemSize: 16.0,
-                                                                            ),
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                2.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              verticalListHouseRecord.quantity!.toString(),
-                                                                              textAlign: TextAlign.start,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    fontSize: 12.0,
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
                                                                     ],
                                                                   ),
                                                                 ],
@@ -677,46 +687,88 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     CrossAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceEvenly,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
                                                                             0.0,
-                                                                            5.0,
                                                                             0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          verticalListHouseRecord
-                                                                              .name!,
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .titleMedium
-                                                                              .override(
-                                                                                fontFamily: 'Roboto',
-                                                                                fontSize: 14.0,
+                                                                            0.0,
+                                                                            2.0),
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceBetween,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              25.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Icon(
+                                                                                Icons.thumb_up_outlined,
+                                                                                color: FlutterFlowTheme.of(context).alternateTwo,
+                                                                                size: 24.0,
                                                                               ),
+                                                                              Icon(
+                                                                                Icons.thumb_up_outlined,
+                                                                                color: FlutterFlowTheme.of(context).accent2,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  FFLocalizations.of(context).getText(
+                                                                                    'xf8fzlp3' /* 0 */,
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Poppins',
+                                                                                        fontSize: 10.0,
+                                                                                      ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
                                                                         ),
-                                                                      ),
-                                                                      Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          verticalListHouseRecord
-                                                                              .views
-                                                                              ?.toString(),
-                                                                          '0',
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              25.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              FaIcon(
+                                                                                FontAwesomeIcons.eye,
+                                                                                color: Colors.black,
+                                                                                size: 15.0,
+                                                                              ),
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  verticalListHouseRecord.views!.toString(),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Poppins',
+                                                                                        fontSize: 10.0,
+                                                                                      ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
                                                                         ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
-                                                                      ),
-                                                                    ],
+                                                                      ],
+                                                                    ),
                                                                   ),
                                                                 ],
                                                               ),

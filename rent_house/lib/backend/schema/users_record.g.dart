@@ -84,6 +84,16 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
                   DocumentReference, const [const FullType.nullable(Object)])
             ])));
     }
+    value = object.myLikes;
+    if (value != null) {
+      result
+        ..add('myLikes')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  DocumentReference, const [const FullType.nullable(Object)])
+            ])));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -145,6 +155,13 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
                     DocumentReference, const [const FullType.nullable(Object)])
               ]))! as BuiltList<Object?>);
           break;
+        case 'myLikes':
+          result.myLikes.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    DocumentReference, const [const FullType.nullable(Object)])
+              ]))! as BuiltList<Object?>);
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -178,6 +195,8 @@ class _$UsersRecord extends UsersRecord {
   @override
   final BuiltList<DocumentReference<Object?>>? myFavorites;
   @override
+  final BuiltList<DocumentReference<Object?>>? myLikes;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$UsersRecord([void Function(UsersRecordBuilder)? updates]) =>
@@ -193,6 +212,7 @@ class _$UsersRecord extends UsersRecord {
       this.userPhone,
       this.phoneNumber,
       this.myFavorites,
+      this.myLikes,
       this.ffRef})
       : super._();
 
@@ -216,6 +236,7 @@ class _$UsersRecord extends UsersRecord {
         userPhone == other.userPhone &&
         phoneNumber == other.phoneNumber &&
         myFavorites == other.myFavorites &&
+        myLikes == other.myLikes &&
         ffRef == other.ffRef;
   }
 
@@ -231,6 +252,7 @@ class _$UsersRecord extends UsersRecord {
     _$hash = $jc(_$hash, userPhone.hashCode);
     _$hash = $jc(_$hash, phoneNumber.hashCode);
     _$hash = $jc(_$hash, myFavorites.hashCode);
+    _$hash = $jc(_$hash, myLikes.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -248,6 +270,7 @@ class _$UsersRecord extends UsersRecord {
           ..add('userPhone', userPhone)
           ..add('phoneNumber', phoneNumber)
           ..add('myFavorites', myFavorites)
+          ..add('myLikes', myLikes)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -294,6 +317,12 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   set myFavorites(ListBuilder<DocumentReference<Object?>>? myFavorites) =>
       _$this._myFavorites = myFavorites;
 
+  ListBuilder<DocumentReference<Object?>>? _myLikes;
+  ListBuilder<DocumentReference<Object?>> get myLikes =>
+      _$this._myLikes ??= new ListBuilder<DocumentReference<Object?>>();
+  set myLikes(ListBuilder<DocumentReference<Object?>>? myLikes) =>
+      _$this._myLikes = myLikes;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -314,6 +343,7 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _userPhone = $v.userPhone;
       _phoneNumber = $v.phoneNumber;
       _myFavorites = $v.myFavorites?.toBuilder();
+      _myLikes = $v.myLikes?.toBuilder();
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -348,12 +378,15 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
               userPhone: userPhone,
               phoneNumber: phoneNumber,
               myFavorites: _myFavorites?.build(),
+              myLikes: _myLikes?.build(),
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'myFavorites';
         _myFavorites?.build();
+        _$failedField = 'myLikes';
+        _myLikes?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'UsersRecord', _$failedField, e.toString());

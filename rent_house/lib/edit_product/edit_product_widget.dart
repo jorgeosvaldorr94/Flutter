@@ -1,16 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/flutter_flow/flutter_flow_checkbox_group.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'edit_product_model.dart';
@@ -77,29 +75,24 @@ class _EditProductWidgetState extends State<EditProductWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 10.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 30.0, 16.0, 10.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                      child: FlutterFlowIconButton(
-                        borderColor: FlutterFlowTheme.of(context).black600,
-                        borderRadius: 5.0,
-                        borderWidth: 1.0,
-                        buttonSize: 50.0,
-                        fillColor: FlutterFlowTheme.of(context).accent4,
-                        icon: Icon(
-                          Icons.arrow_back_rounded,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 30.0,
-                        ),
-                        onPressed: () async {
-                          context.pop();
-                        },
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pop();
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.angleDoubleLeft,
+                        color: Colors.black,
+                        size: 40.0,
                       ),
                     ),
                     Text(
@@ -113,41 +106,35 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                 fontSize: 22.0,
                               ),
                     ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                      child: FlutterFlowIconButton(
-                        borderColor: FlutterFlowTheme.of(context).black600,
-                        borderRadius: 5.0,
-                        borderWidth: 1.0,
-                        buttonSize: 50.0,
-                        fillColor: FlutterFlowTheme.of(context).accent4,
-                        icon: Icon(
-                          Icons.done_outline_sharp,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 30.0,
-                        ),
-                        onPressed: () async {
-                          final houseUpdateData = createHouseRecordData(
-                            name: _model.yourTitleController.text,
-                            description: _model.yourDescriptionController.text,
-                            price: double.tryParse(
-                                _model.yourPriceController.text),
-                            modifiedAt: getCurrentTimestamp,
-                            quantity: widget.itemEditProduct!.quantity,
-                            city: _model.yourCityController.text,
-                            municipality:
-                                _model.yourMunicipalityController.text,
-                            locality: _model.yourLocalityController.text,
-                            image: _model.uploadedFileUrl,
-                            contact:
-                                int.tryParse(_model.yourContactController.text),
-                          );
-                          await widget.itemEditProduct!.reference
-                              .update(houseUpdateData);
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        final houseUpdateData = createHouseRecordData(
+                          name: _model.yourTitleController.text,
+                          description: _model.yourDescriptionController.text,
+                          price:
+                              double.tryParse(_model.yourPriceController.text),
+                          modifiedAt: getCurrentTimestamp,
+                          quantity: widget.itemEditProduct!.quantity,
+                          city: _model.yourCityController.text,
+                          municipality: _model.yourMunicipalityController.text,
+                          locality: _model.yourLocalityController.text,
+                          image: _model.uploadedFileUrl,
+                          contact:
+                              int.tryParse(_model.yourContactController.text),
+                        );
+                        await widget.itemEditProduct!.reference
+                            .update(houseUpdateData);
 
-                          context.pushNamed('OwnProduct');
-                        },
+                        context.pushNamed('OwnProduct');
+                      },
+                      child: Icon(
+                        Icons.done_all_outlined,
+                        color: Colors.black,
+                        size: 45.0,
                       ),
                     ),
                   ],
@@ -735,66 +722,6 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          '98oyq2z8' /* Star Property */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
-                      Container(
-                        width: 200.0,
-                        child: FlutterFlowCheckboxGroup(
-                          options: [
-                            FFLocalizations.of(context).getText(
-                              'z077876p' /* Rooms (2 or more) */,
-                            ),
-                            FFLocalizations.of(context).getText(
-                              'an5vxx3o' /* Heated */,
-                            ),
-                            FFLocalizations.of(context).getText(
-                              'qie5e320' /* Pool */,
-                            ),
-                            FFLocalizations.of(context).getText(
-                              'j9yv5l0x' /* Garage */,
-                            ),
-                            FFLocalizations.of(context).getText(
-                              'uuiu0l26' /* Additional services */,
-                            )
-                          ],
-                          onChanged: (val) =>
-                              setState(() => _model.checkboxGroupValues = val),
-                          controller: _model.checkboxGroupValueController ??=
-                              FormFieldController<List<String>>(
-                            [],
-                          ),
-                          activeColor: FlutterFlowTheme.of(context).primary,
-                          checkColor: Colors.white,
-                          checkboxBorderColor:
-                              FlutterFlowTheme.of(context).accent2,
-                          textStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 10.0,
-                                  ),
-                          initialized: _model.checkboxGroupValues != null,
-                        ),
-                      ),
-                    ],
                   ),
                 ],
               ),

@@ -211,9 +211,10 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                     onTap: () async {
                                       context.pushNamed('MyProfile');
                                     },
-                                    child: Icon(
-                                      Icons.arrow_back_rounded,
-                                      color: Color(0xFFE0E0E0),
+                                    child: FaIcon(
+                                      FontAwesomeIcons.angleDoubleLeft,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent3,
                                       size: 40.0,
                                     ),
                                   ),

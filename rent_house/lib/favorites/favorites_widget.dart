@@ -1,5 +1,5 @@
+import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
-import '/auth/firebase_auth/firebase_user_provider.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -11,6 +11,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'favorites_model.dart';
@@ -197,7 +198,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 14.0, 16.0, 14.0),
+                                  36.0, 14.0, 36.0, 14.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'kt3n3pic' /* These are your favorite houses... */,
@@ -229,9 +230,10 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                     onTap: () async {
                                       context.pushNamed('Home');
                                     },
-                                    child: Icon(
-                                      Icons.arrow_back_sharp,
-                                      color: Color(0xFFE0E0E0),
+                                    child: FaIcon(
+                                      FontAwesomeIcons.angleDoubleLeft,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent3,
                                       size: 40.0,
                                     ),
                                   ),

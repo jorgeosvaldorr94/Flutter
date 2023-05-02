@@ -236,7 +236,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 14.0, 20.0, 0.0),
+                                        20.0, 12.0, 20.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.passwordController,
                                       autofocus: true,
@@ -536,7 +536,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 14.0, 20.0, 0.0),
+                                        20.0, 12.0, 20.0, 0.0),
                                     child: TextFormField(
                                       controller:
                                           _model.emailAddressCreateController,
@@ -632,7 +632,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 14.0, 20.0, 0.0),
+                                        20.0, 12.0, 20.0, 0.0),
                                     child: TextFormField(
                                       controller:
                                           _model.passwordCreateController,
