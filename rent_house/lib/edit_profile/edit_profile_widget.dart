@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 import 'edit_profile_model.dart';
 export 'edit_profile_model.dart';
@@ -35,11 +36,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
       currentUserDisplayName,
       'Your Name',
     ));
-    _model.yourPhoneController ??= TextEditingController(
-        text: valueOrDefault<String>(
-      valueOrDefault(currentUserDocument?.userPhone, 0).toString(),
-      'Phone Number',
-    ));
+    _model.yourPhoneController ??=
+        TextEditingController(text: currentPhoneNumber);
     _model.yourEmailController ??= TextEditingController(
         text: valueOrDefault<String>(
       currentUserEmail,
@@ -119,8 +117,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 _model.uploadedFileUrl,
                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/h1ufndtvw7bq/profile.png',
                               ),
-                              userPhone:
-                                  int.tryParse(_model.yourPhoneController.text),
+                              phoneNumber: _model.yourPhoneController.text,
                             );
                             await currentUserReference!.update(usersUpdateData);
 
@@ -360,6 +357,18 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'e5fxaonz' /* Specify (+ your country code) */,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 10.0,
+                          ),
+                    ),
+                  ),
                   Align(
                     alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
@@ -420,6 +429,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           keyboardType: TextInputType.number,
                           validator: _model.yourPhoneControllerValidator
                               .asValidator(context),
+                          inputFormatters: [_model.yourPhoneMask],
                         ),
                       ),
                     ),

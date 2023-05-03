@@ -36,8 +36,8 @@ class _AddProductWidgetState extends State<AddProductWidget> {
     _model.yourTitleController ??= TextEditingController();
     _model.yourPriceController ??= TextEditingController();
     _model.yourCityController ??= TextEditingController();
-    _model.yourContactController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.userPhone, 0).toString());
+    _model.yourContactController ??=
+        TextEditingController(text: currentPhoneNumber);
     _model.yourLocalityController ??= TextEditingController();
     _model.yourMunicipalityController ??= TextEditingController();
     _model.yourDescriptionController ??= TextEditingController();
@@ -112,13 +112,13 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           city: _model.yourCityController.text,
                           municipality: _model.yourMunicipalityController.text,
                           locality: _model.yourLocalityController.text,
-                          contact:
-                              int.tryParse(_model.yourContactController.text),
                           createdAt: getCurrentTimestamp,
                           image: _model.uploadedFileUrl,
                           createdBy: currentUserUid,
                           createdByName: currentUserDisplayName,
                           views: 1,
+                          likes: 0,
+                          contact: _model.yourContactController.text,
                         );
                         await HouseRecord.collection.doc().set(houseCreateData);
                         context.safePop();

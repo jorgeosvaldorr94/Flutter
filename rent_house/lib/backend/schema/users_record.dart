@@ -24,9 +24,6 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 
   bool? get isAdmin;
 
-  @BuiltValueField(wireName: 'user_Phone')
-  int? get userPhone;
-
   @BuiltValueField(wireName: 'phone_number')
   String? get phoneNumber;
 
@@ -44,7 +41,6 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
     ..photoUrl = ''
     ..uid = ''
     ..isAdmin = false
-    ..userPhone = 0
     ..phoneNumber = ''
     ..myFavorites = ListBuilder()
     ..myLikes = ListBuilder();
@@ -77,7 +73,6 @@ Map<String, dynamic> createUsersRecordData({
   String? uid,
   DateTime? createdTime,
   bool? isAdmin,
-  int? userPhone,
   String? phoneNumber,
 }) {
   final firestoreData = serializers.toFirestore(
@@ -90,7 +85,6 @@ Map<String, dynamic> createUsersRecordData({
         ..uid = uid
         ..createdTime = createdTime
         ..isAdmin = isAdmin
-        ..userPhone = userPhone
         ..phoneNumber = phoneNumber
         ..myFavorites = null
         ..myLikes = null,

@@ -1,12 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -82,21 +80,15 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                               size: 40.0,
                             ),
                           ),
-                          if (!widget.itemHouse!.favorites!
+                          if (widget.itemHouse!.favorites!
                               .toList()
                               .contains(currentUserReference))
-                            FlutterFlowIconButton(
-                              borderColor: Color(0xFF0F0E0E),
-                              borderRadius: 5.0,
-                              borderWidth: 1.0,
-                              buttonSize: 50.0,
-                              fillColor: FlutterFlowTheme.of(context).accent4,
-                              icon: Icon(
-                                Icons.favorite_border,
-                                color: FlutterFlowTheme.of(context).error,
-                                size: 30.0,
-                              ),
-                              onPressed: () async {
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
                                 final houseUpdateData = {
                                   'favorites': FieldValue.arrayUnion(
                                       [currentUserReference]),
@@ -105,22 +97,21 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                     .update(houseUpdateData);
                                 context.safePop();
                               },
+                              child: Icon(
+                                Icons.favorite_border,
+                                color: FlutterFlowTheme.of(context).error,
+                                size: 40.0,
+                              ),
                             ),
                           if (widget.itemHouse!.favorites!
                               .toList()
                               .contains(currentUserReference))
-                            FlutterFlowIconButton(
-                              borderColor: Color(0xFF0F0E0E),
-                              borderRadius: 5.0,
-                              borderWidth: 1.0,
-                              buttonSize: 50.0,
-                              fillColor: FlutterFlowTheme.of(context).accent4,
-                              icon: Icon(
-                                Icons.favorite_sharp,
-                                color: FlutterFlowTheme.of(context).error,
-                                size: 30.0,
-                              ),
-                              onPressed: () async {
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
                                 final houseUpdateData = {
                                   'favorites': FieldValue.arrayRemove(
                                       [currentUserReference]),
@@ -129,6 +120,11 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                     .update(houseUpdateData);
                                 context.safePop();
                               },
+                              child: Icon(
+                                Icons.favorite_sharp,
+                                color: FlutterFlowTheme.of(context).error,
+                                size: 40.0,
+                              ),
                             ),
                         ],
                       ),
@@ -172,147 +168,112 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 14.0, 24.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 8.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                RatingBarIndicator(
-                                  itemBuilder: (context, index) => Icon(
-                                    Icons.star_rounded,
-                                    color: Color(0xFFFFA130),
-                                  ),
-                                  direction: Axis.horizontal,
-                                  rating:
-                                      widget.itemHouse!.quantity!.toDouble(),
-                                  unratedColor: Color(0xFF95A1AC),
-                                  itemCount: 5,
-                                  itemSize: 24.0,
-                                ),
-                                Text(
-                                  widget.itemHouse!.quantity!.toString(),
-                                  style: FlutterFlowTheme.of(context).bodySmall,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            widget.itemHouse!.name!,
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.normal,
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 0.0),
+                            child: Text(
+                              widget.itemHouse!.name!,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleLarge
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 24.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                widget.itemHouse!.city!,
+                                style: FlutterFlowTheme.of(context).bodySmall,
+                              ),
+                              Text(
+                                widget.itemHouse!.municipality!,
+                                style: FlutterFlowTheme.of(context).bodySmall,
+                              ),
+                              Text(
+                                widget.itemHouse!.locality!,
+                                style: FlutterFlowTheme.of(context).bodySmall,
+                              ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 4.0, 24.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 2.0, 0.0, 0.0),
+                                      child: Text(
+                                        widget.itemHouse!.specifications!,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              fontSize: 15.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 24.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            widget.itemHouse!.city!,
-                            style: FlutterFlowTheme.of(context).bodySmall,
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'kw2qg2h9' /* --- */,
-                            ),
-                            style:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Roboto',
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 4.0, 24.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.contact_page_sharp,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent1,
+                                      size: 35.0,
                                     ),
-                          ),
-                          Text(
-                            widget.itemHouse!.municipality!,
-                            style: FlutterFlowTheme.of(context).bodySmall,
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'vx9e5xvi' /* --- */,
-                            ),
-                            style:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Roboto',
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          2.0, 2.0, 0.0, 0.0),
+                                      child: Text(
+                                        widget.itemHouse!.contact!,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent1,
+                                              fontSize: 15.0,
+                                            ),
+                                      ),
                                     ),
-                          ),
-                          Text(
-                            widget.itemHouse!.locality!,
-                            style: FlutterFlowTheme.of(context).bodySmall,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 24.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 2.0, 0.0, 0.0),
-                            child: Text(
-                              widget.itemHouse!.specifications!,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 15.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 24.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.perm_contact_cal_rounded,
-                            color: Colors.black,
-                            size: 35.0,
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                2.0, 2.0, 0.0, 0.0),
-                            child: Text(
-                              widget.itemHouse!.contact!.toString(),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 15.0,
-                                  ),
-                            ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -349,7 +310,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                           Expanded(
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 24.0),
+                                  25.0, 0.0, 25.0, 24.0),
                               child: Text(
                                 widget.itemHouse!.description!,
                                 textAlign: TextAlign.center,

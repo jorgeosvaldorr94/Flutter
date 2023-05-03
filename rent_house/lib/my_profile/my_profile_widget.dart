@@ -216,14 +216,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                       ),
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          valueOrDefault<String>(
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.userPhone,
-                                                    0)
-                                                .toString(),
-                                            'Phone Number ',
-                                          ),
+                                          currentPhoneNumber,
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(

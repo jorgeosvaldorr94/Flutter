@@ -186,10 +186,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add House',
       'es': '',
     },
-    'xf8fzlp3': {
-      'en': '0',
-      'es': '',
-    },
     'gyr2lqb1': {
       'en': 'Cinque Terre',
       'es': '',
@@ -205,14 +201,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Details
   {
-    'kw2qg2h9': {
-      'en': '---',
-      'es': '',
-    },
-    'vx9e5xvi': {
-      'en': '---',
-      'es': '',
-    },
     '4xynv3hg': {
       'en': 'DESCRIPTION',
       'es': '',
@@ -245,6 +233,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6t6atyg0': {
       'en': 'Your Name',
+      'es': '',
+    },
+    'e5fxaonz': {
+      'en': 'Specify (+ your country code)',
       'es': '',
     },
     'lrv3blfk': {
@@ -565,6 +557,53 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ue9xt3i1': {
       'en': '\$220 USD',
+      'es': '',
+    },
+  },
+  // Login2
+  {
+    'gnnoqupc': {
+      'en': 'Cuban Rent House',
+      'es': '',
+    },
+    'qjimb8d5': {
+      'en': 'Sign In',
+      'es': '',
+    },
+    'kdoxqi0n': {
+      'en': 'Email Address',
+      'es': '',
+    },
+    'uxxnohkr': {
+      'en': 'Password',
+      'es': '',
+    },
+    '9vjjagto': {
+      'en': 'Sign In',
+      'es': '',
+    },
+    '7bq5qyqm': {
+      'en': 'Forgot Password?',
+      'es': '',
+    },
+    'lthqjtbl': {
+      'en': 'Sign Up',
+      'es': '',
+    },
+    '30fblhaz': {
+      'en': 'Email Address',
+      'es': '',
+    },
+    'eu9q44pj': {
+      'en': 'Password',
+      'es': '',
+    },
+    'm1yr41h8': {
+      'en': 'Create Account',
+      'es': '',
+    },
+    '6ghc2bc0': {
+      'en': 'Home',
       'es': '',
     },
   },

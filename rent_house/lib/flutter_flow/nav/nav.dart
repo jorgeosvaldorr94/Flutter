@@ -153,6 +153,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Favorites',
           path: '/favorites',
           builder: (context, params) => FavoritesWidget(),
+        ),
+        FFRoute(
+          name: 'Login2',
+          path: '/login2',
+          builder: (context, params) => Login2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

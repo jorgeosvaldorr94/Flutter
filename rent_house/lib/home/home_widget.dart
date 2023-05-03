@@ -87,7 +87,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -111,7 +111,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Roboto',
-                                              fontSize: 12.0,
+                                              fontSize: 14.0,
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
@@ -124,7 +124,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                              fontSize: 12.0,
+                                              fontSize: 14.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -182,12 +182,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               )
                                             : null,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Roboto',
-                                            fontSize: 12.0,
-                                          ),
+                                      style: GoogleFonts.getFont(
+                                        'Roboto',
+                                        fontSize: 14.0,
+                                      ),
                                       maxLines: null,
                                       validator: _model.textControllerValidator
                                           .asValidator(context),
@@ -204,14 +202,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   'zxbmywce' /* Explore the best rental houses... */,
                                 ),
                                 textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .displaySmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      fontSize: 18.0,
-                                    ),
+                                style: GoogleFonts.getFont(
+                                  'Roboto',
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBtnText,
+                                  fontSize: 18.0,
+                                ),
                               ),
                             ),
                             Padding(
@@ -271,14 +267,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: Color(0x5F262D34),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Outfit',
-                                                      color: Color(0xFFE0E0E0),
-                                                      fontSize: 16.0,
-                                                    ),
+                                            textStyle: GoogleFonts.getFont(
+                                              'Roboto',
+                                              color: Color(0xFFE0E0E0),
+                                              fontSize: 16.0,
+                                            ),
                                             elevation: 0.0,
                                             borderSide: BorderSide(
                                               color:
@@ -324,6 +317,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     child: Icon(
                                       Icons.favorite_border,
                                       color: Color(0x00E0E0E0),
+                                      size: 40.0,
+                                    ),
+                                  ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('Login2');
+                                    },
+                                    child: Icon(
+                                      Icons.threesixty,
+                                      color: Color(0xFFE0E0E0),
                                       size: 40.0,
                                     ),
                                   ),
@@ -713,22 +720,64 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
-                                                                              Icon(
-                                                                                Icons.thumb_up_outlined,
-                                                                                color: FlutterFlowTheme.of(context).alternateTwo,
-                                                                                size: 24.0,
-                                                                              ),
-                                                                              Icon(
-                                                                                Icons.thumb_up_outlined,
-                                                                                color: FlutterFlowTheme.of(context).accent2,
-                                                                                size: 24.0,
-                                                                              ),
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 0.0, 0.0),
-                                                                                child: Text(
-                                                                                  FFLocalizations.of(context).getText(
-                                                                                    'xf8fzlp3' /* 0 */,
+                                                                              if ((currentUserDocument?.myLikes?.toList() ?? []).contains(verticalListHouseRecord.reference))
+                                                                                AuthUserStreamWidget(
+                                                                                  builder: (context) => InkWell(
+                                                                                    splashColor: Colors.transparent,
+                                                                                    focusColor: Colors.transparent,
+                                                                                    hoverColor: Colors.transparent,
+                                                                                    highlightColor: Colors.transparent,
+                                                                                    onTap: () async {
+                                                                                      final usersUpdateData = {
+                                                                                        'myLikes': FieldValue.arrayRemove([
+                                                                                          verticalListHouseRecord.reference
+                                                                                        ]),
+                                                                                      };
+                                                                                      await currentUserReference!.update(usersUpdateData);
+
+                                                                                      final houseUpdateData = {
+                                                                                        'likes': FieldValue.increment(-(1)),
+                                                                                      };
+                                                                                      await verticalListHouseRecord.reference.update(houseUpdateData);
+                                                                                    },
+                                                                                    child: Icon(
+                                                                                      Icons.thumb_up_outlined,
+                                                                                      color: FlutterFlowTheme.of(context).alternateTwo,
+                                                                                      size: 24.0,
+                                                                                    ),
                                                                                   ),
+                                                                                ),
+                                                                              if (!(currentUserDocument?.myLikes?.toList() ?? []).contains(verticalListHouseRecord.reference))
+                                                                                AuthUserStreamWidget(
+                                                                                  builder: (context) => InkWell(
+                                                                                    splashColor: Colors.transparent,
+                                                                                    focusColor: Colors.transparent,
+                                                                                    hoverColor: Colors.transparent,
+                                                                                    highlightColor: Colors.transparent,
+                                                                                    onTap: () async {
+                                                                                      final usersUpdateData = {
+                                                                                        'myLikes': FieldValue.arrayUnion([
+                                                                                          verticalListHouseRecord.reference
+                                                                                        ]),
+                                                                                      };
+                                                                                      await currentUserReference!.update(usersUpdateData);
+
+                                                                                      final houseUpdateData = {
+                                                                                        'likes': FieldValue.increment(1),
+                                                                                      };
+                                                                                      await verticalListHouseRecord.reference.update(houseUpdateData);
+                                                                                    },
+                                                                                    child: Icon(
+                                                                                      Icons.thumb_up_outlined,
+                                                                                      color: FlutterFlowTheme.of(context).accent2,
+                                                                                      size: 24.0,
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  verticalListHouseRecord.likes!.toString(),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Poppins',
                                                                                         fontSize: 10.0,

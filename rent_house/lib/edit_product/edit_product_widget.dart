@@ -42,8 +42,8 @@ class _EditProductWidgetState extends State<EditProductWidget> {
         TextEditingController(text: widget.itemEditProduct!.price?.toString());
     _model.yourCityController ??=
         TextEditingController(text: widget.itemEditProduct!.city);
-    _model.yourContactController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.userPhone, 0).toString());
+    _model.yourContactController ??=
+        TextEditingController(text: currentPhoneNumber);
     _model.yourLocalityController ??=
         TextEditingController(text: widget.itemEditProduct!.locality);
     _model.yourMunicipalityController ??=
@@ -123,8 +123,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                           municipality: _model.yourMunicipalityController.text,
                           locality: _model.yourLocalityController.text,
                           image: _model.uploadedFileUrl,
-                          contact:
-                              int.tryParse(_model.yourContactController.text),
+                          contact: _model.yourContactController.text,
                         );
                         await widget.itemEditProduct!.reference
                             .update(houseUpdateData);

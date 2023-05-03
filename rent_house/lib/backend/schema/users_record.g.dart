@@ -61,12 +61,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
-    value = object.userPhone;
-    if (value != null) {
-      result
-        ..add('user_Phone')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
     value = object.phoneNumber;
     if (value != null) {
       result
@@ -140,10 +134,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.isAdmin = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
           break;
-        case 'user_Phone':
-          result.userPhone = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
-          break;
         case 'phone_number':
           result.phoneNumber = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -189,8 +179,6 @@ class _$UsersRecord extends UsersRecord {
   @override
   final bool? isAdmin;
   @override
-  final int? userPhone;
-  @override
   final String? phoneNumber;
   @override
   final BuiltList<DocumentReference<Object?>>? myFavorites;
@@ -209,7 +197,6 @@ class _$UsersRecord extends UsersRecord {
       this.uid,
       this.createdTime,
       this.isAdmin,
-      this.userPhone,
       this.phoneNumber,
       this.myFavorites,
       this.myLikes,
@@ -233,7 +220,6 @@ class _$UsersRecord extends UsersRecord {
         uid == other.uid &&
         createdTime == other.createdTime &&
         isAdmin == other.isAdmin &&
-        userPhone == other.userPhone &&
         phoneNumber == other.phoneNumber &&
         myFavorites == other.myFavorites &&
         myLikes == other.myLikes &&
@@ -249,7 +235,6 @@ class _$UsersRecord extends UsersRecord {
     _$hash = $jc(_$hash, uid.hashCode);
     _$hash = $jc(_$hash, createdTime.hashCode);
     _$hash = $jc(_$hash, isAdmin.hashCode);
-    _$hash = $jc(_$hash, userPhone.hashCode);
     _$hash = $jc(_$hash, phoneNumber.hashCode);
     _$hash = $jc(_$hash, myFavorites.hashCode);
     _$hash = $jc(_$hash, myLikes.hashCode);
@@ -267,7 +252,6 @@ class _$UsersRecord extends UsersRecord {
           ..add('uid', uid)
           ..add('createdTime', createdTime)
           ..add('isAdmin', isAdmin)
-          ..add('userPhone', userPhone)
           ..add('phoneNumber', phoneNumber)
           ..add('myFavorites', myFavorites)
           ..add('myLikes', myLikes)
@@ -303,10 +287,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   bool? get isAdmin => _$this._isAdmin;
   set isAdmin(bool? isAdmin) => _$this._isAdmin = isAdmin;
 
-  int? _userPhone;
-  int? get userPhone => _$this._userPhone;
-  set userPhone(int? userPhone) => _$this._userPhone = userPhone;
-
   String? _phoneNumber;
   String? get phoneNumber => _$this._phoneNumber;
   set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
@@ -340,7 +320,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _uid = $v.uid;
       _createdTime = $v.createdTime;
       _isAdmin = $v.isAdmin;
-      _userPhone = $v.userPhone;
       _phoneNumber = $v.phoneNumber;
       _myFavorites = $v.myFavorites?.toBuilder();
       _myLikes = $v.myLikes?.toBuilder();
@@ -375,7 +354,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
               uid: uid,
               createdTime: createdTime,
               isAdmin: isAdmin,
-              userPhone: userPhone,
               phoneNumber: phoneNumber,
               myFavorites: _myFavorites?.build(),
               myLikes: _myLikes?.build(),

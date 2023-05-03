@@ -109,12 +109,6 @@ class _$HouseRecordSerializer implements StructuredSerializer<HouseRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.contact;
-    if (value != null) {
-      result
-        ..add('contact')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
     value = object.images;
     if (value != null) {
       result
@@ -166,6 +160,19 @@ class _$HouseRecordSerializer implements StructuredSerializer<HouseRecord> {
         ..add('isFav')
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.likes;
+    if (value != null) {
+      result
+        ..add('likes')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.contact;
+    if (value != null) {
+      result
+        ..add('contact')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.ffRef;
     if (value != null) {
@@ -241,10 +248,6 @@ class _$HouseRecordSerializer implements StructuredSerializer<HouseRecord> {
           result.image = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'contact':
-          result.contact = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
-          break;
         case 'images':
           result.images.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
@@ -277,6 +280,14 @@ class _$HouseRecordSerializer implements StructuredSerializer<HouseRecord> {
         case 'isFav':
           result.isFav = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'likes':
+          result.likes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'contact':
+          result.contact = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -319,8 +330,6 @@ class _$HouseRecord extends HouseRecord {
   @override
   final String? image;
   @override
-  final int? contact;
-  @override
   final BuiltList<String>? images;
   @override
   final String? type;
@@ -334,6 +343,10 @@ class _$HouseRecord extends HouseRecord {
   final BuiltList<DocumentReference<Object?>>? favorites;
   @override
   final bool? isFav;
+  @override
+  final int? likes;
+  @override
+  final String? contact;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -354,7 +367,6 @@ class _$HouseRecord extends HouseRecord {
       this.municipality,
       this.locality,
       this.image,
-      this.contact,
       this.images,
       this.type,
       this.createdBy,
@@ -362,6 +374,8 @@ class _$HouseRecord extends HouseRecord {
       this.views,
       this.favorites,
       this.isFav,
+      this.likes,
+      this.contact,
       this.ffRef})
       : super._();
 
@@ -389,7 +403,6 @@ class _$HouseRecord extends HouseRecord {
         municipality == other.municipality &&
         locality == other.locality &&
         image == other.image &&
-        contact == other.contact &&
         images == other.images &&
         type == other.type &&
         createdBy == other.createdBy &&
@@ -397,6 +410,8 @@ class _$HouseRecord extends HouseRecord {
         views == other.views &&
         favorites == other.favorites &&
         isFav == other.isFav &&
+        likes == other.likes &&
+        contact == other.contact &&
         ffRef == other.ffRef;
   }
 
@@ -416,7 +431,6 @@ class _$HouseRecord extends HouseRecord {
     _$hash = $jc(_$hash, municipality.hashCode);
     _$hash = $jc(_$hash, locality.hashCode);
     _$hash = $jc(_$hash, image.hashCode);
-    _$hash = $jc(_$hash, contact.hashCode);
     _$hash = $jc(_$hash, images.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, createdBy.hashCode);
@@ -424,6 +438,8 @@ class _$HouseRecord extends HouseRecord {
     _$hash = $jc(_$hash, views.hashCode);
     _$hash = $jc(_$hash, favorites.hashCode);
     _$hash = $jc(_$hash, isFav.hashCode);
+    _$hash = $jc(_$hash, likes.hashCode);
+    _$hash = $jc(_$hash, contact.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -445,7 +461,6 @@ class _$HouseRecord extends HouseRecord {
           ..add('municipality', municipality)
           ..add('locality', locality)
           ..add('image', image)
-          ..add('contact', contact)
           ..add('images', images)
           ..add('type', type)
           ..add('createdBy', createdBy)
@@ -453,6 +468,8 @@ class _$HouseRecord extends HouseRecord {
           ..add('views', views)
           ..add('favorites', favorites)
           ..add('isFav', isFav)
+          ..add('likes', likes)
+          ..add('contact', contact)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -514,10 +531,6 @@ class HouseRecordBuilder implements Builder<HouseRecord, HouseRecordBuilder> {
   String? get image => _$this._image;
   set image(String? image) => _$this._image = image;
 
-  int? _contact;
-  int? get contact => _$this._contact;
-  set contact(int? contact) => _$this._contact = contact;
-
   ListBuilder<String>? _images;
   ListBuilder<String> get images =>
       _$this._images ??= new ListBuilder<String>();
@@ -550,6 +563,14 @@ class HouseRecordBuilder implements Builder<HouseRecord, HouseRecordBuilder> {
   bool? get isFav => _$this._isFav;
   set isFav(bool? isFav) => _$this._isFav = isFav;
 
+  int? _likes;
+  int? get likes => _$this._likes;
+  set likes(int? likes) => _$this._likes = likes;
+
+  String? _contact;
+  String? get contact => _$this._contact;
+  set contact(String? contact) => _$this._contact = contact;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -574,7 +595,6 @@ class HouseRecordBuilder implements Builder<HouseRecord, HouseRecordBuilder> {
       _municipality = $v.municipality;
       _locality = $v.locality;
       _image = $v.image;
-      _contact = $v.contact;
       _images = $v.images?.toBuilder();
       _type = $v.type;
       _createdBy = $v.createdBy;
@@ -582,6 +602,8 @@ class HouseRecordBuilder implements Builder<HouseRecord, HouseRecordBuilder> {
       _views = $v.views;
       _favorites = $v.favorites?.toBuilder();
       _isFav = $v.isFav;
+      _likes = $v.likes;
+      _contact = $v.contact;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -620,7 +642,6 @@ class HouseRecordBuilder implements Builder<HouseRecord, HouseRecordBuilder> {
               municipality: municipality,
               locality: locality,
               image: image,
-              contact: contact,
               images: _images?.build(),
               type: type,
               createdBy: createdBy,
@@ -628,6 +649,8 @@ class HouseRecordBuilder implements Builder<HouseRecord, HouseRecordBuilder> {
               views: views,
               favorites: _favorites?.build(),
               isFav: isFav,
+              likes: likes,
+              contact: contact,
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;

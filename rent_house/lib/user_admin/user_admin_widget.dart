@@ -13,6 +13,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'user_admin_model.dart';
 export 'user_admin_model.dart';
 
@@ -460,14 +461,13 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                               width: 130.0,
                                                                               height: 30.0,
                                                                               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).error,
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    color: Colors.white,
-                                                                                    fontSize: 10.0,
-                                                                                    fontWeight: FontWeight.w300,
-                                                                                  ),
+                                                                              textStyle: TextStyle(
+                                                                                color: Colors.white,
+                                                                                fontWeight: FontWeight.w300,
+                                                                                fontSize: 14.0,
+                                                                              ),
                                                                               borderSide: BorderSide(
                                                                                 color: Colors.transparent,
                                                                                 width: 1.0,
@@ -484,23 +484,15 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                             0.0),
                                                                         child:
                                                                             Text(
-                                                                          formatNumber(
-                                                                            verticalListUsersRecord.userPhone!,
-                                                                            formatType:
-                                                                                FormatType.custom,
-                                                                            format:
-                                                                                '+(53) ## ## ####',
-                                                                            locale:
-                                                                                '',
-                                                                          ),
+                                                                          verticalListUsersRecord
+                                                                              .phoneNumber!,
                                                                           textAlign:
                                                                               TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Poppins',
-                                                                                fontSize: 10.0,
-                                                                              ),
+                                                                          style:
+                                                                              TextStyle(
+                                                                            fontSize:
+                                                                                12.0,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                       Padding(
@@ -522,7 +514,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                               hoverColor: Colors.transparent,
                                                                               highlightColor: Colors.transparent,
                                                                               onTap: () async {
-                                                                                await launchURL('tel:{{currentItem.user_Phone}}');
+                                                                                await launchURL('tel:{{currentItem.phone_number}}');
                                                                               },
                                                                               child: Icon(
                                                                                 Icons.phone,
@@ -536,7 +528,10 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                               hoverColor: Colors.transparent,
                                                                               highlightColor: Colors.transparent,
                                                                               onTap: () async {
-                                                                                await launchURL('https://wa.me/{{currentItem.user_Phone}}');
+                                                                                await launchUrl(Uri(
+                                                                                  scheme: 'tel',
+                                                                                  path: verticalListUsersRecord.phoneNumber!,
+                                                                                ));
                                                                               },
                                                                               child: FaIcon(
                                                                                 FontAwesomeIcons.whatsapp,
@@ -585,17 +580,14 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                       textAlign:
                                                                           TextAlign
                                                                               .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Roboto',
-                                                                            fontSize:
-                                                                                14.0,
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
+                                                                      style: GoogleFonts
+                                                                          .getFont(
+                                                                        'Roboto',
+                                                                        fontWeight:
+                                                                            FontWeight.normal,
+                                                                        fontSize:
+                                                                            14.0,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ],
@@ -638,13 +630,14 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                           Text(
                                                                         verticalListUsersRecord
                                                                             .email!,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodySmall
-                                                                            .override(
-                                                                              fontFamily: 'Roboto',
-                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                              fontSize: 12.0,
-                                                                            ),
+                                                                        style: GoogleFonts
+                                                                            .getFont(
+                                                                          'Roboto',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).info,
+                                                                          fontSize:
+                                                                              12.0,
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -665,17 +658,15 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Roboto',
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        fontWeight:
-                                                                            FontWeight.normal,
-                                                                      ),
+                                                                  style: GoogleFonts
+                                                                      .getFont(
+                                                                    'Roboto',
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontSize:
+                                                                        10.0,
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ],

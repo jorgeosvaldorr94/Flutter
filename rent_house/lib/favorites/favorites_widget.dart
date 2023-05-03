@@ -557,47 +557,6 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                2.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                RatingBarIndicator(
-                                                                              itemBuilder: (context, index) => Icon(
-                                                                                Icons.star_rounded,
-                                                                                color: FlutterFlowTheme.of(context).tertiary,
-                                                                              ),
-                                                                              direction: Axis.horizontal,
-                                                                              rating: verticalListHouseRecord.quantity!.toDouble(),
-                                                                              unratedColor: FlutterFlowTheme.of(context).accent2,
-                                                                              itemCount: 5,
-                                                                              itemSize: 16.0,
-                                                                            ),
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                2.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              verticalListHouseRecord.quantity!.toString(),
-                                                                              textAlign: TextAlign.start,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    fontSize: 12.0,
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
                                                                     ],
                                                                   ),
                                                                 ],

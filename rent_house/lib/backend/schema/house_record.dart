@@ -39,8 +39,6 @@ abstract class HouseRecord implements Built<HouseRecord, HouseRecordBuilder> {
 
   String? get image;
 
-  int? get contact;
-
   BuiltList<String>? get images;
 
   String? get type;
@@ -56,6 +54,10 @@ abstract class HouseRecord implements Built<HouseRecord, HouseRecordBuilder> {
   BuiltList<DocumentReference>? get favorites;
 
   bool? get isFav;
+
+  int? get likes;
+
+  String? get contact;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -73,14 +75,15 @@ abstract class HouseRecord implements Built<HouseRecord, HouseRecordBuilder> {
     ..municipality = ''
     ..locality = ''
     ..image = ''
-    ..contact = 0
     ..images = ListBuilder()
     ..type = ''
     ..createdBy = ''
     ..createdByName = ''
     ..views = 0
     ..favorites = ListBuilder()
-    ..isFav = false;
+    ..isFav = false
+    ..likes = 0
+    ..contact = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('house');
@@ -117,12 +120,13 @@ Map<String, dynamic> createHouseRecordData({
   String? municipality,
   String? locality,
   String? image,
-  int? contact,
   String? type,
   String? createdBy,
   String? createdByName,
   int? views,
   bool? isFav,
+  int? likes,
+  String? contact,
 }) {
   final firestoreData = serializers.toFirestore(
     HouseRecord.serializer,
@@ -141,14 +145,15 @@ Map<String, dynamic> createHouseRecordData({
         ..municipality = municipality
         ..locality = locality
         ..image = image
-        ..contact = contact
         ..images = null
         ..type = type
         ..createdBy = createdBy
         ..createdByName = createdByName
         ..views = views
         ..favorites = null
-        ..isFav = isFav,
+        ..isFav = isFav
+        ..likes = likes
+        ..contact = contact,
     ),
   );
 
