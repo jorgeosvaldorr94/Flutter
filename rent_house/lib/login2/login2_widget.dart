@@ -66,7 +66,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                       children: [
                         Text(
                           FFLocalizations.of(context).getText(
-                            'gnnoqupc' /* Cuban Rent House */,
+                            'y8x7gv03' /* Cuban Rent House */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -111,12 +111,12 @@ class _Login2WidgetState extends State<Login2Widget> {
                           tabs: [
                             Tab(
                               text: FFLocalizations.of(context).getText(
-                                'qjimb8d5' /* Sign In */,
+                                'jm5dprxq' /* Sign In */,
                               ),
                             ),
                             Tab(
                               text: FFLocalizations.of(context).getText(
-                                'lthqjtbl' /* Sign Up */,
+                                '2eg9dr9w' /* Sign Up */,
                               ),
                             ),
                           ],
@@ -140,7 +140,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                                       decoration: InputDecoration(
                                         labelText:
                                             FFLocalizations.of(context).getText(
-                                          'kdoxqi0n' /* Email Address */,
+                                          'ni158ou8' /* Email Address */,
                                         ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
@@ -204,7 +204,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                                       decoration: InputDecoration(
                                         labelText:
                                             FFLocalizations.of(context).getText(
-                                          'uxxnohkr' /* Password */,
+                                          'nnvmjghb' /* Password */,
                                         ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
@@ -283,7 +283,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                                         print('Button-Login pressed ...');
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        '9vjjagto' /* Sign In */,
+                                        'wmvlpo6d' /* Sign In */,
                                       ),
                                       options: FFButtonOptions(
                                         width: 230.0,
@@ -319,7 +319,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                                             'Button-ForgotPassword pressed ...');
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        '7bq5qyqm' /* Forgot Password? */,
+                                        'pmfbzzy8' /* Forgot Password? */,
                                       ),
                                       options: FFButtonOptions(
                                         width: 170.0,
@@ -366,7 +366,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                                       decoration: InputDecoration(
                                         labelText:
                                             FFLocalizations.of(context).getText(
-                                          '30fblhaz' /* Email Address */,
+                                          'bi2zy8eb' /* Email Address */,
                                         ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
@@ -432,7 +432,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                                       decoration: InputDecoration(
                                         labelText:
                                             FFLocalizations.of(context).getText(
-                                          'eu9q44pj' /* Password */,
+                                          '37j8ym1p' /* Password */,
                                         ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
@@ -513,7 +513,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                                         context.pushNamed('Home');
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        'm1yr41h8' /* Create Account */,
+                                        's5twvkgh' /* Create Account */,
                                       ),
                                       options: FFButtonOptions(
                                         width: 230.0,

@@ -562,47 +562,47 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Login2
   {
-    'gnnoqupc': {
+    'y8x7gv03': {
       'en': 'Cuban Rent House',
       'es': '',
     },
-    'qjimb8d5': {
+    'jm5dprxq': {
       'en': 'Sign In',
       'es': '',
     },
-    'kdoxqi0n': {
+    'ni158ou8': {
       'en': 'Email Address',
       'es': '',
     },
-    'uxxnohkr': {
+    'nnvmjghb': {
       'en': 'Password',
       'es': '',
     },
-    '9vjjagto': {
+    'wmvlpo6d': {
       'en': 'Sign In',
       'es': '',
     },
-    '7bq5qyqm': {
+    'pmfbzzy8': {
       'en': 'Forgot Password?',
       'es': '',
     },
-    'lthqjtbl': {
+    '2eg9dr9w': {
       'en': 'Sign Up',
       'es': '',
     },
-    '30fblhaz': {
+    'bi2zy8eb': {
       'en': 'Email Address',
       'es': '',
     },
-    'eu9q44pj': {
+    '37j8ym1p': {
       'en': 'Password',
       'es': '',
     },
-    'm1yr41h8': {
+    's5twvkgh': {
       'en': 'Create Account',
       'es': '',
     },
-    '6ghc2bc0': {
+    '90klbou0': {
       'en': 'Home',
       'es': '',
     },
