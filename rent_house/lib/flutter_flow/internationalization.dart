@@ -560,49 +560,53 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // Login2
+  // LoginNew
   {
-    'y8x7gv03': {
-      'en': 'Cuban Rent House',
+    '6uv5nrcl': {
+      'en': 'Cuban Rent Houses',
       'es': '',
     },
-    'jm5dprxq': {
+    'jki3ound': {
       'en': 'Sign In',
       'es': '',
     },
-    'ni158ou8': {
-      'en': 'Email Address',
+    'kvxu3coc': {
+      'en': 'Email',
       'es': '',
     },
-    'nnvmjghb': {
+    'eejhg9nj': {
       'en': 'Password',
       'es': '',
     },
-    'wmvlpo6d': {
+    '6evmxyr9': {
       'en': 'Sign In',
       'es': '',
     },
-    'pmfbzzy8': {
-      'en': 'Forgot Password?',
+    'x2q74lj9': {
+      'en': 'Forgot Password ?',
       'es': '',
     },
-    '2eg9dr9w': {
+    '837tavhl': {
       'en': 'Sign Up',
       'es': '',
     },
-    'bi2zy8eb': {
-      'en': 'Email Address',
+    '68kuudw9': {
+      'en': 'Name',
       'es': '',
     },
-    '37j8ym1p': {
+    'dedg6ilt': {
+      'en': 'Email',
+      'es': '',
+    },
+    'jqv0djvm': {
       'en': 'Password',
       'es': '',
     },
-    's5twvkgh': {
+    'pz6vbt6k': {
       'en': 'Create Account',
       'es': '',
     },
-    '90klbou0': {
+    'q8kdsa36': {
       'en': 'Home',
       'es': '',
     },

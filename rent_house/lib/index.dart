@@ -13,4 +13,4 @@ export '/user_admin/user_admin_widget.dart' show UserAdminWidget;
 export '/own_product/own_product_widget.dart' show OwnProductWidget;
 export '/edit_product/edit_product_widget.dart' show EditProductWidget;
 export '/favorites/favorites_widget.dart' show FavoritesWidget;
-export '/login2/login2_widget.dart' show Login2Widget;
+export '/login_new/login_new_widget.dart' show LoginNewWidget;

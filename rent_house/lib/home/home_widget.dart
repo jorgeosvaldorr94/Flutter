@@ -71,13 +71,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       child: Image.asset(
                         'assets/images/Snap_2023-05-01_at_18.08.21.png',
                         width: double.infinity,
-                        height: 300.0,
+                        height: 320.0,
                         fit: BoxFit.cover,
                       ),
                     ),
                     Container(
                       width: double.infinity,
-                      height: 300.0,
+                      height: 320.0,
                       decoration: BoxDecoration(
                         color: Color(0x8D090F13),
                       ),
@@ -111,7 +111,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Roboto',
-                                              fontSize: 14.0,
+                                              fontSize: 20.0,
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
@@ -124,7 +124,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                              fontSize: 14.0,
+                                              fontSize: 20.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -184,7 +184,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       ),
                                       style: GoogleFonts.getFont(
                                         'Roboto',
-                                        fontSize: 14.0,
+                                        fontSize: 20.0,
                                       ),
                                       maxLines: null,
                                       validator: _model.textControllerValidator
@@ -196,7 +196,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 20.0, 16.0, 14.0),
+                                  16.0, 12.0, 16.0, 14.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'zxbmywce' /* Explore the best rental houses... */,
@@ -206,13 +206,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   'Roboto',
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBtnText,
-                                  fontSize: 18.0,
+                                  fontSize: 25.0,
                                 ),
                               ),
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 30.0, 16.0, 0.0),
+                                  16.0, 12.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -270,7 +270,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             textStyle: GoogleFonts.getFont(
                                               'Roboto',
                                               color: Color(0xFFE0E0E0),
-                                              fontSize: 16.0,
+                                              fontSize: 30.0,
                                             ),
                                             elevation: 0.0,
                                             borderSide: BorderSide(
@@ -320,20 +320,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       size: 40.0,
                                     ),
                                   ),
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed('Login2');
-                                    },
-                                    child: Icon(
-                                      Icons.threesixty,
-                                      color: Color(0xFFE0E0E0),
-                                      size: 40.0,
-                                    ),
-                                  ),
                                   if (!loggedIn)
                                     InkWell(
                                       splashColor: Colors.transparent,
@@ -341,7 +327,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('Login');
+                                        context.pushNamed('LoginNew');
                                       },
                                       child: Icon(
                                         Icons.person_add,
@@ -354,7 +340,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 32.0, 0.0, 0.0),
+                                  0.0, 20.0, 0.0, 0.0),
                               child: Container(
                                 width: double.infinity,
                                 height: 700.0,
@@ -529,32 +515,36 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         MainAxisAlignment
                                                                             .start,
                                                                     children: [
-                                                                      Hero(
-                                                                        tag: valueOrDefault<
-                                                                            String>(
-                                                                          verticalListHouseRecord
-                                                                              .image,
-                                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/nzpikfn3jrh3/Logo_Rent_House.png' +
-                                                                              '$verticalListIndex',
-                                                                        ),
-                                                                        transitionOnUserGestures:
-                                                                            true,
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
-                                                                            ClipRRect(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(12.0),
+                                                                            Hero(
+                                                                          tag: valueOrDefault<
+                                                                              String>(
+                                                                            verticalListHouseRecord.image,
+                                                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/nzpikfn3jrh3/Logo_Rent_House.png' +
+                                                                                '$verticalListIndex',
+                                                                          ),
+                                                                          transitionOnUserGestures:
+                                                                              true,
                                                                           child:
-                                                                              Image.network(
-                                                                            valueOrDefault<String>(
-                                                                              verticalListHouseRecord.image,
-                                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/nzpikfn3jrh3/Logo_Rent_House.png',
+                                                                              ClipRRect(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(12.0),
+                                                                            child:
+                                                                                Image.network(
+                                                                              valueOrDefault<String>(
+                                                                                verticalListHouseRecord.image,
+                                                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/nzpikfn3jrh3/Logo_Rent_House.png',
+                                                                              ),
+                                                                              width: 170.0,
+                                                                              height: 140.0,
+                                                                              fit: BoxFit.cover,
                                                                             ),
-                                                                            width:
-                                                                                150.0,
-                                                                            height:
-                                                                                150.0,
-                                                                            fit:
-                                                                                BoxFit.cover,
                                                                           ),
                                                                         ),
                                                                       ),
