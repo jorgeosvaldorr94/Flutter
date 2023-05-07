@@ -52,7 +52,7 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).lineColor,
         body: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -69,9 +69,7 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      FFLocalizations.of(context).getText(
-                        '6uv5nrcl' /* Cuban Rent Houses */,
-                      ),
+                      'Cuban Rent Houses',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
@@ -106,7 +104,7 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                         Align(
                           alignment: Alignment(0.0, 0),
                           child: TabBar(
-                            labelColor: FlutterFlowTheme.of(context).gray600,
+                            labelColor: FlutterFlowTheme.of(context).black600,
                             unselectedLabelColor:
                                 FlutterFlowTheme.of(context).accent2,
                             labelStyle: FlutterFlowTheme.of(context)
@@ -120,14 +118,10 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                 FlutterFlowTheme.of(context).black600,
                             tabs: [
                               Tab(
-                                text: FFLocalizations.of(context).getText(
-                                  'jki3ound' /* Sign In */,
-                                ),
+                                text: 'Sign In',
                               ),
                               Tab(
-                                text: FFLocalizations.of(context).getText(
-                                  '837tavhl' /* Sign Up */,
-                                ),
+                                text: 'Sign Up',
                               ),
                             ],
                           ),
@@ -155,18 +149,7 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                           ),
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'kvxu3coc' /* Email */,
-                                            ),
-                                            hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      fontSize: 14.0,
-                                                    ),
+                                            labelText: 'Email',
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
@@ -243,11 +226,7 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                           obscureText:
                                               !_model.signPasswordVisibility,
                                           decoration: InputDecoration(
-                                            labelText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'eejhg9nj' /* Password */,
-                                            ),
+                                            labelText: 'Password',
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
@@ -351,10 +330,7 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                               context.goNamedAuth(
                                                   'Transition', mounted);
                                             },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              '6evmxyr9' /* Sign In */,
-                                            ),
+                                            text: 'Sign In',
                                             options: FFButtonOptions(
                                               width: 130.0,
                                               height: 40.0,
@@ -404,10 +380,7 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                                         'RecoverPassword');
                                                   },
                                                   child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'x2q74lj9' /* Forgot Password ? */,
-                                                    ),
+                                                    'Forgot Password ?',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -447,11 +420,14 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                           ),
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              '68kuudw9' /* Name */,
-                                            ),
+                                            labelText: 'Name',
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.black,
+                                                    ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
@@ -517,7 +493,10 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                                 : null,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Roboto Serif',
+                                              ),
                                           textAlign: TextAlign.start,
                                           minLines: 1,
                                           keyboardType:
@@ -541,11 +520,14 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                           ),
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'dedg6ilt' /* Email */,
-                                            ),
+                                            labelText: 'Email',
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.black,
+                                                    ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
@@ -611,7 +593,10 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                                 : null,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Roboto Serif',
+                                              ),
                                           textAlign: TextAlign.start,
                                           minLines: 1,
                                           keyboardType:
@@ -630,11 +615,14 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                           obscureText:
                                               !_model.signUpPasswordVisibility,
                                           decoration: InputDecoration(
-                                            labelText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'jqv0djvm' /* Password */,
-                                            ),
+                                            labelText: 'Password',
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.black,
+                                                    ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
@@ -699,7 +687,10 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                             ),
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Roboto Serif',
+                                              ),
                                           textAlign: TextAlign.start,
                                           validator: _model
                                               .signUpPasswordControllerValidator
@@ -752,10 +743,7 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                               context.goNamedAuth(
                                                   'Transition', mounted);
                                             },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'pz6vbt6k' /* Create Account */,
-                                            ),
+                                            text: 'Create Account',
                                             options: FFButtonOptions(
                                               width: 130.0,
                                               height: 40.0,
@@ -770,7 +758,8 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        fontFamily:
+                                                            'Roboto Serif',
                                                         color: Colors.white,
                                                         fontSize: 20.0,
                                                       ),

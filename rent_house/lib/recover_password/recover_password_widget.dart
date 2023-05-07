@@ -99,9 +99,7 @@ class _RecoverPasswordWidgetState extends State<RecoverPasswordWidget>
                       ),
                     ),
                     Text(
-                      FFLocalizations.of(context).getText(
-                        'yxf7ifxe' /* Recover */,
-                      ),
+                      'Recover',
                       textAlign: TextAlign.center,
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
@@ -139,9 +137,7 @@ class _RecoverPasswordWidgetState extends State<RecoverPasswordWidget>
                       padding:
                           EdgeInsetsDirectional.fromSTEB(36.0, 0.0, 36.0, 0.0),
                       child: Text(
-                        FFLocalizations.of(context).getText(
-                          'euqq32og' /* Instructions to recover your p... */,
-                        ),
+                        'Instructions to recover your password will be sent to your email',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
@@ -169,9 +165,7 @@ class _RecoverPasswordWidgetState extends State<RecoverPasswordWidget>
                         ),
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: FFLocalizations.of(context).getText(
-                            'ec15dg1o' /* Your Email */,
-                          ),
+                          labelText: 'Your Email',
                           labelStyle: FlutterFlowTheme.of(context).bodySmall,
                           hintStyle: FlutterFlowTheme.of(context).bodySmall,
                           enabledBorder: OutlineInputBorder(
@@ -286,9 +280,7 @@ class _RecoverPasswordWidgetState extends State<RecoverPasswordWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'eb9oblvq' /* Send */,
-                                  ),
+                                  'Send',
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(

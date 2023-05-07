@@ -109,9 +109,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                     ),
                   ),
                   Text(
-                    FFLocalizations.of(context).getText(
-                      'zxhphefp' /* Profile */,
-                    ),
+                    'Profile',
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -291,9 +289,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                FFLocalizations.of(context).getText(
-                                  'yx4vpx6w' /* Switch to Dark Mode */,
-                                ),
+                                'Switch to Dark Mode',
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
                               Container(
@@ -377,9 +373,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              FFLocalizations.of(context).getText(
-                                'eanteqk6' /* Switch to Light Mode */,
-                              ),
+                              'Switch to Light Mode',
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                             Container(
@@ -460,9 +454,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                       child: Text(
-                        FFLocalizations.of(context).getText(
-                          '88fvrr1i' /* Account Settings */,
-                        ),
+                        'Account Settings',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
@@ -516,9 +508,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'ub79t01s' /* Edit Profile */,
-                                  ),
+                                  'Edit Profile',
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
@@ -583,9 +573,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'xhjhauzq' /* My Post */,
-                                  ),
+                                  'My Post',
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
@@ -652,9 +640,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'vu18oxzj' /* Admin Houses */,
-                                      ),
+                                      'Admin Houses',
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -722,9 +708,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'edgfz9g0' /* Admin Users */,
-                                      ),
+                                      'Admin Users',
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(

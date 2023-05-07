@@ -112,10 +112,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                               fontFamily: 'Roboto',
                                               fontSize: 12.0,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'qsmhjpcq' /* Search... */,
-                                        ),
+                                        hintText: 'Search...',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -200,9 +197,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   36.0, 14.0, 36.0, 14.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'kt3n3pic' /* These are your favorite houses... */,
-                                ),
+                                'These are your favorite houses.',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall

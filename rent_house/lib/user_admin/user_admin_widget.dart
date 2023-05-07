@@ -112,10 +112,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                               fontFamily: 'Roboto',
                                               fontSize: 12.0,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'haq5k8p6' /* Search... */,
-                                        ),
+                                        hintText: 'Search...',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -448,9 +445,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                               }
                                                                             },
                                                                             text:
-                                                                                FFLocalizations.of(context).getText(
-                                                                              'ntr9809n' /* Delete */,
-                                                                            ),
+                                                                                'Delete',
                                                                             icon:
                                                                                 Icon(
                                                                               Icons.delete_forever_sharp,

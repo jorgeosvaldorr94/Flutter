@@ -113,10 +113,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               fontFamily: 'Roboto',
                                               fontSize: 20.0,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'l9lhoan7' /* Search... */,
-                                        ),
+                                        hintText: 'Search...',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -198,9 +195,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 16.0, 14.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'zxbmywce' /* Explore the best rental houses... */,
-                                ),
+                                'Explore the best rental houses and rooms.',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.getFont(
                                   'Roboto',
@@ -253,10 +248,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               },
                                             );
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'xy16xp3c' /* Add House */,
-                                          ),
+                                          text: 'Add House',
                                           options: FFButtonOptions(
                                             width: 130.0,
                                             height: 35.0,

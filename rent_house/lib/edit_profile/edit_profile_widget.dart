@@ -93,9 +93,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           ),
                         ),
                         Text(
-                          FFLocalizations.of(context).getText(
-                            'n0cak6gr' /* Edit Profile */,
-                          ),
+                          'Edit Profile',
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
@@ -269,9 +267,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  FFLocalizations.of(context).getText(
-                                    '2d3ugdzz' /* Edit Photo */,
-                                  ),
+                                  'Edit Photo',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
@@ -306,9 +302,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           controller: _model.yourNameController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              '6t6atyg0' /* Your Name */,
-                            ),
+                            labelText: 'Your Name',
                             labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
@@ -360,9 +354,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                     child: Text(
-                      FFLocalizations.of(context).getText(
-                        'e5fxaonz' /* Specify (+ your country code) */,
-                      ),
+                      'Specify (+ your country code)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             fontSize: 10.0,
@@ -379,12 +371,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           controller: _model.yourPhoneController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              'lrv3blfk' /* Your Phone */,
-                            ),
-                            hintText: FFLocalizations.of(context).getText(
-                              'ujebm449' /* Phone Number */,
-                            ),
+                            labelText: 'Your Phone',
+                            hintText: 'Phone Number',
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -443,9 +431,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         controller: _model.yourEmailController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: FFLocalizations.of(context).getText(
-                            'tm86e2o5' /* Email Address */,
-                          ),
+                          labelText: 'Email Address',
                           labelStyle: FlutterFlowTheme.of(context).bodySmall,
                           hintStyle: FlutterFlowTheme.of(context).bodySmall,
                           enabledBorder: OutlineInputBorder(
@@ -554,9 +540,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'hplheqc2' /* Delete Profile */,
-                                  ),
+                                  'Delete Profile',
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(

@@ -109,14 +109,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                             indicatorColor: Color(0xFF262D34),
                             tabs: [
                               Tab(
-                                text: FFLocalizations.of(context).getText(
-                                  'wutccdp5' /* Sign In */,
-                                ),
+                                text: 'Sign In',
                               ),
                               Tab(
-                                text: FFLocalizations.of(context).getText(
-                                  '3j55507q' /* Sign Up */,
-                                ),
+                                text: 'Sign Up',
                               ),
                             ],
                           ),
@@ -142,10 +138,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          'ta6wby80' /* Your Email */,
-                                        ),
+                                        labelText: 'Your Email',
                                         labelStyle: TextStyle(
                                           color: Color(0xFF0F1113),
                                           fontSize: 20.0,
@@ -231,10 +224,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       autofocus: true,
                                       obscureText: !_model.passwordVisibility,
                                       decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          '3y9rak8f' /* Your Password */,
-                                        ),
+                                        labelText: 'Your Password',
                                         labelStyle: TextStyle(
                                           color: FlutterFlowTheme.of(context)
                                               .black600,
@@ -343,10 +333,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 context.goNamedAuth(
                                                     'Transition', mounted);
                                               },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'i30k1rdt' /* Sign In */,
-                                              ),
+                                              text: 'Sign In',
                                               options: FFButtonOptions(
                                                 width: 230.0,
                                                 height: 45.0,
@@ -388,10 +375,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   .pushNamed('RecoverPassword');
                                             },
                                             child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '4dlej5as' /* forgot password ? */,
-                                              ),
+                                              'forgot password ?',
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.getFont(
                                                 'Outfit',
@@ -424,10 +408,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       ),
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          'nil43wiw' /* Your Name */,
-                                        ),
+                                        labelText: 'Your Name',
                                         labelStyle: GoogleFonts.getFont(
                                           'Roboto',
                                           color: Color(0xFF0F1113),
@@ -519,10 +500,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          '41j9ladi' /* Your Email */,
-                                        ),
+                                        labelText: 'Your Email',
                                         hintStyle: GoogleFonts.getFont(
                                           'Roboto',
                                           color: FlutterFlowTheme.of(context)
@@ -606,10 +584,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       obscureText:
                                           !_model.passwordCreateVisibility,
                                       decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          '3vkm788a' /* Your Password */,
-                                        ),
+                                        labelText: 'Your Password',
                                         hintStyle: GoogleFonts.getFont(
                                           'Roboto',
                                           color: FlutterFlowTheme.of(context)
@@ -696,10 +671,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             onPressed: () {
                                               print('Button-Login pressed ...');
                                             },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              '43m4shxz' /* Create Account */,
-                                            ),
+                                            text: 'Create Account',
                                             options: FFButtonOptions(
                                               width: 230.0,
                                               height: 45.0,

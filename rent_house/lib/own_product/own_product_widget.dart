@@ -111,10 +111,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                               fontFamily: 'Roboto',
                                               fontSize: 12.0,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          '04a3ympz' /* Search... */,
-                                        ),
+                                        hintText: 'Search...',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(

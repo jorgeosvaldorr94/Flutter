@@ -116,10 +116,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                     fontFamily: 'Roboto',
                                                     fontSize: 12.0,
                                                   ),
-                                          hintText: FFLocalizations.of(context)
-                                              .getText(
-                                            'ortvir8z' /* Search... */,
-                                          ),
+                                          hintText: 'Search...',
                                           hintStyle: FlutterFlowTheme.of(
                                                   context)
                                               .bodyLarge
@@ -462,9 +459,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                             }
                                                                           },
                                                                           text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            'l4ilzf6n' /* Delete */,
-                                                                          ),
+                                                                              'Delete',
                                                                           options:
                                                                               FFButtonOptions(
                                                                             width:

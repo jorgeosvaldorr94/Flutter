@@ -96,9 +96,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                       ),
                     ),
                     Text(
-                      FFLocalizations.of(context).getText(
-                        'onix7c0s' /* Edit Post */,
-                      ),
+                      'Edit Post',
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
                                 fontFamily: 'Poppins',
@@ -235,9 +233,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                             }
                           }
                         },
-                        text: FFLocalizations.of(context).getText(
-                          'rd4yqmj2' /*  */,
-                        ),
+                        text: '',
                         icon: Icon(
                           Icons.add_photo_alternate_outlined,
                           size: 15.0,
@@ -281,9 +277,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                           controller: _model.yourTitleController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              'hb034zgj' /* Title */,
-                            ),
+                            labelText: 'Title',
                             labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
@@ -342,9 +336,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                           controller: _model.yourPriceController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              'yk53o580' /* Price */,
-                            ),
+                            labelText: 'Price',
                             labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
@@ -410,9 +402,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                           controller: _model.yourCityController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              '8pv8rksg' /* City */,
-                            ),
+                            labelText: 'City',
                             labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
@@ -472,9 +462,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                             controller: _model.yourContactController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                'fm2g8lxk' /* Contact */,
-                              ),
+                              labelText: 'Contact',
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodySmall,
                               hintStyle: FlutterFlowTheme.of(context).bodySmall,
@@ -543,9 +531,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                           controller: _model.yourLocalityController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              'zytsqqwi' /* Locality */,
-                            ),
+                            labelText: 'Locality',
                             labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
@@ -604,9 +590,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                           controller: _model.yourMunicipalityController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              'low1hflp' /* Municipality */,
-                            ),
+                            labelText: 'Municipality',
                             labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
@@ -670,9 +654,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                           controller: _model.yourDescriptionController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              'jrd5nsxn' /* Description */,
-                            ),
+                            labelText: 'Description',
                             labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(

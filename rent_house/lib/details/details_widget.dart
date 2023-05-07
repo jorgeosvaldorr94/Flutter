@@ -286,9 +286,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            FFLocalizations.of(context).getText(
-                              '4xynv3hg' /* DESCRIPTION */,
-                            ),
+                            'DESCRIPTION',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -342,9 +340,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                       onPressed: () async {
                         await launchURL('tel:{{currentItem.contact}}');
                       },
-                      text: FFLocalizations.of(context).getText(
-                        '10txb4xv' /*  */,
-                      ),
+                      text: '',
                       icon: Icon(
                         Icons.local_phone,
                         color: FlutterFlowTheme.of(context).alternateTwo,
@@ -427,9 +423,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                         await launchURL(
                             'https://wa.me/{{currentItem.contact}}');
                       },
-                      text: FFLocalizations.of(context).getText(
-                        'd684ngxh' /*  */,
-                      ),
+                      text: '',
                       icon: FaIcon(
                         FontAwesomeIcons.whatsapp,
                         color: FlutterFlowTheme.of(context).success,

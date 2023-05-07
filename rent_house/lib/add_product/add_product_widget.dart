@@ -87,9 +87,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                       ),
                     ),
                     Text(
-                      FFLocalizations.of(context).getText(
-                        'wzju45k3' /* Add Post */,
-                      ),
+                      'Add Post',
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
                                 fontFamily: 'Poppins',
@@ -217,9 +215,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             }
                           }
                         },
-                        text: FFLocalizations.of(context).getText(
-                          'o21dtogz' /*  */,
-                        ),
+                        text: '',
                         icon: Icon(
                           Icons.add_photo_alternate_outlined,
                           size: 15.0,
@@ -266,9 +262,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             controller: _model.yourTitleController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                '36ftpm9z' /* Title */,
-                              ),
+                              labelText: 'Title',
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodySmall,
                               hintStyle: FlutterFlowTheme.of(context).bodySmall,
@@ -330,9 +324,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             controller: _model.yourPriceController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                '9kbgv3mh' /* Price */,
-                              ),
+                              labelText: 'Price',
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodySmall,
                               hintStyle: FlutterFlowTheme.of(context).bodySmall,
@@ -405,9 +397,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             controller: _model.yourCityController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                'eyxod8m0' /* City */,
-                              ),
+                              labelText: 'City',
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodySmall,
                               hintStyle: FlutterFlowTheme.of(context).bodySmall,
@@ -470,9 +460,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                               controller: _model.yourContactController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: FFLocalizations.of(context).getText(
-                                  '818z64af' /* Contact */,
-                                ),
+                                labelText: 'Contact',
                                 labelStyle:
                                     FlutterFlowTheme.of(context).bodySmall,
                                 hintStyle:
@@ -546,9 +534,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             controller: _model.yourLocalityController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                'wsuq3eh1' /* Locality */,
-                              ),
+                              labelText: 'Locality',
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodySmall,
                               hintStyle: FlutterFlowTheme.of(context).bodySmall,
@@ -610,9 +596,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             controller: _model.yourMunicipalityController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                'ezyxmr41' /* Municipality */,
-                              ),
+                              labelText: 'Municipality',
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodySmall,
                               hintStyle: FlutterFlowTheme.of(context).bodySmall,
@@ -681,9 +665,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           controller: _model.yourDescriptionController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              'vrcp4mqk' /* Description */,
-                            ),
+                            labelText: 'Description',
                             labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
@@ -744,9 +726,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        FFLocalizations.of(context).getText(
-                          'pgfdixar' /* Star Property */,
-                        ),
+                        'Star Property',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 12.0,
@@ -760,21 +740,11 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                               16.0, 0.0, 0.0, 0.0),
                           child: FlutterFlowCheckboxGroup(
                             options: [
-                              FFLocalizations.of(context).getText(
-                                'qxfenj71' /* Rooms (2 or more) */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                '3xkk6q1y' /* Heated */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'lg75w6bs' /* Pool */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'gzyprris' /* Garage */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'd4yghwri' /* Additional services */,
-                              )
+                              'Rooms (2 or more)',
+                              'Heated',
+                              'Pool',
+                              'Garage',
+                              'Additional services'
                             ],
                             onChanged: (val) => setState(
                                 () => _model.checkboxGroupValues = val),
