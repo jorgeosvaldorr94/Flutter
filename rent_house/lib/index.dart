@@ -14,3 +14,5 @@ export '/own_product/own_product_widget.dart' show OwnProductWidget;
 export '/edit_product/edit_product_widget.dart' show EditProductWidget;
 export '/favorites/favorites_widget.dart' show FavoritesWidget;
 export '/login_new/login_new_widget.dart' show LoginNewWidget;
+export '/sign_up/sign_up_widget.dart' show SignUpWidget;
+export '/sign_in/sign_in_widget.dart' show SignInWidget;

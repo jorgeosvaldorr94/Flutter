@@ -158,6 +158,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'LoginNew',
           path: '/loginNew',
           builder: (context, params) => LoginNewWidget(),
+        ),
+        FFRoute(
+          name: 'SignUp',
+          path: '/signUp',
+          builder: (context, params) => SignUpWidget(),
+        ),
+        FFRoute(
+          name: 'SignIn',
+          path: '/signIn',
+          builder: (context, params) => SignInWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

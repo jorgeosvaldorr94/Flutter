@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -711,37 +710,8 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                             CrossAxisAlignment.stretch,
                                         children: [
                                           FFButtonWidget(
-                                            onPressed: () async {
-                                              GoRouter.of(context)
-                                                  .prepareAuthEvent();
-
-                                              final user = await authManager
-                                                  .createAccountWithEmail(
-                                                context,
-                                                _model
-                                                    .signUpEmailController.text,
-                                                _model.signUpPasswordController
-                                                    .text,
-                                              );
-                                              if (user == null) {
-                                                return;
-                                              }
-
-                                              final usersCreateData =
-                                                  createUsersRecordData(
-                                                createdTime:
-                                                    getCurrentTimestamp,
-                                                email: _model
-                                                    .signUpEmailController.text,
-                                                displayName: _model
-                                                    .signUpNameController.text,
-                                              );
-                                              await UsersRecord.collection
-                                                  .doc(user.uid)
-                                                  .update(usersCreateData);
-
-                                              context.goNamedAuth(
-                                                  'Transition', mounted);
+                                            onPressed: () {
+                                              print('ButtonSignUp pressed ...');
                                             },
                                             text: 'Create Account',
                                             options: FFButtonOptions(

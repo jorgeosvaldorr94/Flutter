@@ -319,7 +319,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('LoginNew');
+                                        context.pushNamed('SignIn');
                                       },
                                       child: Icon(
                                         Icons.person_add,
