@@ -70,13 +70,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? TransitionWidget() : HomeWidget(),
+          appStateNotifier.loggedIn ? HomeWidget() : InitialWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? TransitionWidget() : HomeWidget(),
+              appStateNotifier.loggedIn ? HomeWidget() : InitialWidget(),
         ),
         FFRoute(
           name: 'Login',
@@ -168,6 +168,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'SignIn',
           path: '/signIn',
           builder: (context, params) => SignInWidget(),
+        ),
+        FFRoute(
+          name: 'Initial',
+          path: '/initial',
+          builder: (context, params) => InitialWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
@@ -336,7 +341,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/home';
+            return '/initial';
           }
           return null;
         },
@@ -350,7 +355,7 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Color(0xFFCFCFCF),
+                  color: Color(0xA13A5FFF),
                   child: Image.asset(
                     'assets/images/Logo_Rent_House.png',
                     fit: BoxFit.fitWidth,

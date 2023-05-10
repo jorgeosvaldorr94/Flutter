@@ -327,7 +327,7 @@ class _LoginNewWidgetState extends State<LoginNewWidget> {
                                               }
 
                                               context.goNamedAuth(
-                                                  'Transition', mounted);
+                                                  'Home', mounted);
                                             },
                                             text: 'Sign In',
                                             options: FFButtonOptions(

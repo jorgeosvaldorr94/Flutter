@@ -94,7 +94,7 @@ class _RecoverPasswordWidgetState extends State<RecoverPasswordWidget>
                       },
                       child: FaIcon(
                         FontAwesomeIcons.angleDoubleLeft,
-                        color: Colors.black,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 40.0,
                       ),
                     ),
@@ -139,7 +139,10 @@ class _RecoverPasswordWidgetState extends State<RecoverPasswordWidget>
                       child: Text(
                         'Instructions to recover your password will be sent to your email',
                         textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                            ),
                       ),
                     ),
                   ),

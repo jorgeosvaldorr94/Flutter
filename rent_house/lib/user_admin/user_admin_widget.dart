@@ -110,7 +110,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Roboto',
-                                              fontSize: 12.0,
+                                              fontSize: 14.0,
                                             ),
                                         hintText: 'Search...',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -119,12 +119,13 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                               fontFamily: 'Roboto',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 12.0,
+                                                      .gray600,
+                                              fontSize: 14.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: Color(0x00000000),
+                                            color: FlutterFlowTheme.of(context)
+                                                .gray600,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -155,12 +156,11 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                               BorderRadius.circular(16.0),
                                         ),
                                         filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                        fillColor: Color(0x6DFFFFFF),
                                         prefixIcon: Icon(
                                           Icons.search,
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                              .gray600,
                                           size: 16.0,
                                         ),
                                         suffixIcon: _model
@@ -173,7 +173,9 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                 },
                                                 child: Icon(
                                                   Icons.clear,
-                                                  color: Color(0xFF757575),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .gray600,
                                                   size: 22.0,
                                                 ),
                                               )
@@ -183,7 +185,9 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Roboto',
-                                            fontSize: 12.0,
+                                            color: FlutterFlowTheme.of(context)
+                                                .gray600,
+                                            fontSize: 14.0,
                                           ),
                                       maxLines: null,
                                       validator: _model.textControllerValidator
@@ -212,7 +216,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                     child: FaIcon(
                                       FontAwesomeIcons.angleDoubleLeft,
                                       color:
-                                          FlutterFlowTheme.of(context).accent3,
+                                          FlutterFlowTheme.of(context).accent2,
                                       size: 40.0,
                                     ),
                                   ),
@@ -241,8 +245,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                   ),
                                   Icon(
                                     Icons.person,
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
+                                    color: FlutterFlowTheme.of(context).success,
                                     size: 40.0,
                                   ),
                                 ],
@@ -255,8 +258,15 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                 width: double.infinity,
                                 height: 700.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      FlutterFlowTheme.of(context).primary,
+                                      FlutterFlowTheme.of(context).secondary
+                                    ],
+                                    stops: [0.0, 1.0],
+                                    begin: AlignmentDirectional(0.0, -1.0),
+                                    end: AlignmentDirectional(0, 1.0),
+                                  ),
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(0.0),
                                     bottomRight: Radius.circular(0.0),
@@ -321,15 +331,17 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                             .fromSTEB(16.0, 8.0,
                                                                 16.0, 8.0),
                                                     child: Container(
-                                                      width: 270.0,
+                                                      width: double.infinity,
                                                       decoration: BoxDecoration(
-                                                        color:
-                                                            Color(0xFFC5C8CC),
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 8.0,
-                                                            color: Color(
-                                                                0x230F1113),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
                                                             offset: Offset(
                                                                 0.0, 4.0),
                                                           )
@@ -578,6 +590,8 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                       style: GoogleFonts
                                                                           .getFont(
                                                                         'Roboto',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
                                                                         fontWeight:
                                                                             FontWeight.normal,
                                                                         fontSize:
@@ -631,7 +645,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).info,
                                                                           fontSize:
-                                                                              12.0,
+                                                                              14.0,
                                                                         ),
                                                                       ),
                                                                     ),

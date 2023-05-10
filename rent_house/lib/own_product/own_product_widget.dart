@@ -109,7 +109,10 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Roboto',
-                                              fontSize: 12.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .gray600,
+                                              fontSize: 14.0,
                                             ),
                                         hintText: 'Search...',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -118,8 +121,8 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                               fontFamily: 'Roboto',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 12.0,
+                                                      .gray600,
+                                              fontSize: 14.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -154,11 +157,11 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                               BorderRadius.circular(16.0),
                                         ),
                                         filled: true,
-                                        fillColor: Color(0x8AFFFFFF),
+                                        fillColor: Color(0x6EFFFFFF),
                                         prefixIcon: Icon(
                                           Icons.search,
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                              .gray600,
                                           size: 16.0,
                                         ),
                                         suffixIcon: _model
@@ -171,7 +174,9 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                 },
                                                 child: Icon(
                                                   Icons.clear,
-                                                  color: Color(0xFF757575),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .gray600,
                                                   size: 22.0,
                                                 ),
                                               )
@@ -210,7 +215,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                     child: FaIcon(
                                       FontAwesomeIcons.angleDoubleLeft,
                                       color:
-                                          FlutterFlowTheme.of(context).accent3,
+                                          FlutterFlowTheme.of(context).gray200,
                                       size: 40.0,
                                     ),
                                   ),
@@ -224,7 +229,8 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                     },
                                     child: Icon(
                                       Icons.house,
-                                      color: Color(0xFFE0E0E0),
+                                      color:
+                                          FlutterFlowTheme.of(context).gray200,
                                       size: 40.0,
                                     ),
                                   ),
@@ -336,8 +342,9 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                           boxShadow: [
                                                             BoxShadow(
                                                               blurRadius: 8.0,
-                                                              color: Color(
-                                                                  0x610F1113),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
                                                               offset: Offset(
                                                                   0.0, 4.0),
                                                             )

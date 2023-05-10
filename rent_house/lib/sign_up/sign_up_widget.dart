@@ -64,7 +64,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                     'Cuban Rent House',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Roboto',
-                          color: Color(0xFF262D34),
+                          color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 30.0,
                         ),
                   ),
@@ -108,15 +108,17 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           labelText: 'Your Name',
                           labelStyle: GoogleFonts.getFont(
                             'Roboto',
-                            color: Color(0xFF0F1113),
-                            fontSize: 20.0,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 14.0,
                           ),
-                          hintStyle:
-                              FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Roboto',
-                                    color: FlutterFlowTheme.of(context).accent2,
-                                    fontSize: 20.0,
-                                  ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .bodySmall
+                              .override(
+                                fontFamily: 'Roboto',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 14.0,
+                              ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0xFF262D34),
@@ -146,7 +148,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           filled: true,
-                          fillColor: Color(0x07FFFFFF),
                           contentPadding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 20.0, 0.0),
                           suffixIcon:
@@ -158,7 +159,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       },
                                       child: Icon(
                                         Icons.clear,
-                                        color: Color(0xFF262D34),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 20.0,
                                       ),
                                     )
@@ -166,8 +168,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         ),
                         style: GoogleFonts.getFont(
                           'Roboto',
-                          color: Color(0xFF0F1113),
-                          fontSize: 20.0,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 14.0,
                         ),
                         validator: _model.nameCreateControllerValidator
                             .asValidator(context),
@@ -183,14 +185,18 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           Duration(milliseconds: 2000),
                           () => setState(() {}),
                         ),
-                        autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: 'Your Email',
+                          labelStyle: GoogleFonts.getFont(
+                            'Roboto',
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 14.0,
+                          ),
                           hintStyle: GoogleFonts.getFont(
                             'Roboto',
-                            color: FlutterFlowTheme.of(context).accent2,
-                            fontSize: 20.0,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 14.0,
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -221,7 +227,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           filled: true,
-                          fillColor: Color(0x01FFFFFF),
                           contentPadding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 20.0, 0.0),
                           suffixIcon: _model
@@ -234,7 +239,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   },
                                   child: Icon(
                                     Icons.clear,
-                                    color: Color(0xFF262D34),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     size: 20.0,
                                   ),
                                 )
@@ -242,8 +248,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         ),
                         style: GoogleFonts.getFont(
                           'Roboto',
-                          color: Color(0xFF0F1113),
-                          fontSize: 20.0,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 14.0,
                         ),
                         keyboardType: TextInputType.emailAddress,
                         validator: _model.emailAddressCreateControllerValidator
@@ -255,15 +261,23 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 0.0),
                       child: TextFormField(
                         controller: _model.passwordCreateController,
-                        autofocus: true,
                         obscureText: !_model.passwordCreateVisibility,
                         decoration: InputDecoration(
                           labelText: 'Your Password',
-                          hintStyle: GoogleFonts.getFont(
-                            'Roboto',
-                            color: FlutterFlowTheme.of(context).accent2,
-                            fontSize: 20.0,
-                          ),
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Roboto',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 14.0,
+                              ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Roboto',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 14.0,
+                              ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0xFF262D34),
@@ -293,7 +307,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           filled: true,
-                          fillColor: Color(0x00FFFFFF),
                           contentPadding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 20.0, 0.0),
                           suffixIcon: InkWell(
@@ -306,15 +319,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               _model.passwordCreateVisibility
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
-                              color: Color(0xFF262D34),
+                              color: FlutterFlowTheme.of(context).primaryText,
                               size: 20.0,
                             ),
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Roboto',
-                              color: Color(0xFF0F1113),
-                              fontSize: 20.0,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              fontSize: 14.0,
                             ),
                         validator: _model.passwordCreateControllerValidator
                             .asValidator(context),
@@ -361,7 +374,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     0.0, 0.0, 0.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).gray600,
+                                color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -404,16 +417,17 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       0.0, 0.0, 0.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  color: FlutterFlowTheme.of(context).gray600,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .gray200,
                                       ),
                                   borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),

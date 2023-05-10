@@ -76,7 +76,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                             },
                             child: FaIcon(
                               FontAwesomeIcons.angleDoubleLeft,
-                              color: Colors.black,
+                              color: FlutterFlowTheme.of(context).primaryText,
                               size: 40.0,
                             ),
                           ),
@@ -350,8 +350,8 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(3.0, 3.0, 3.0, 3.0),
-                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                            EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 2.0, 5.0),
+                        color: FlutterFlowTheme.of(context).grayIcon,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Roboto',
@@ -360,7 +360,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.w500,
                                 ),
-                        borderRadius: BorderRadius.circular(25.0),
+                        borderRadius: BorderRadius.circular(24.0),
                       ),
                     ),
                   ),
@@ -434,7 +434,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 1.0, 2.0),
-                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                        color: FlutterFlowTheme.of(context).grayIcon,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Roboto',
@@ -443,9 +443,6 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.w500,
                                 ),
-                        borderSide: BorderSide(
-                          color: Color(0x00090F13),
-                        ),
                         borderRadius: BorderRadius.circular(24.0),
                       ),
                     ),

@@ -65,7 +65,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     'Cuban Rent House',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Roboto',
-                          color: Color(0xFF262D34),
+                          color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 30.0,
                         ),
                   ),
@@ -97,7 +97,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                         Align(
                           alignment: Alignment(0.0, 0),
                           child: TabBar(
-                            labelColor: Color(0xFF262D34),
+                            labelColor:
+                                FlutterFlowTheme.of(context).primaryText,
                             unselectedLabelColor: Color(0xFF7C7675),
                             labelPadding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 15.0, 24.0, 0.0),
@@ -331,7 +332,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 }
 
                                                 context.goNamedAuth(
-                                                    'Transition', mounted);
+                                                    'Home', mounted);
                                               },
                                               text: 'Sign In',
                                               options: FFButtonOptions(
@@ -411,8 +412,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         labelText: 'Your Name',
                                         labelStyle: GoogleFonts.getFont(
                                           'Roboto',
-                                          color: Color(0xFF0F1113),
-                                          fontSize: 20.0,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 14.0,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
@@ -420,8 +422,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               fontFamily: 'Roboto',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent2,
-                                              fontSize: 20.0,
+                                                      .primaryText,
+                                              fontSize: 14.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -470,7 +472,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 },
                                                 child: Icon(
                                                   Icons.clear,
-                                                  color: Color(0xFF262D34),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
                                                   size: 20.0,
                                                 ),
                                               )
@@ -478,8 +482,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       ),
                                       style: GoogleFonts.getFont(
                                         'Roboto',
-                                        color: Color(0xFF0F1113),
-                                        fontSize: 20.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 14.0,
                                       ),
                                       validator: _model
                                           .nameCreateControllerValidator
@@ -501,11 +506,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: 'Your Email',
+                                        labelStyle: GoogleFonts.getFont(
+                                          'Roboto',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 14.0,
+                                        ),
                                         hintStyle: GoogleFonts.getFont(
                                           'Roboto',
                                           color: FlutterFlowTheme.of(context)
-                                              .accent2,
-                                          fontSize: 20.0,
+                                              .primaryText,
+                                          fontSize: 14.0,
                                         ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -557,7 +568,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 },
                                                 child: Icon(
                                                   Icons.clear,
-                                                  color: Color(0xFF262D34),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
                                                   size: 20.0,
                                                 ),
                                               )
@@ -565,8 +578,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       ),
                                       style: GoogleFonts.getFont(
                                         'Roboto',
-                                        color: Color(0xFF0F1113),
-                                        fontSize: 20.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 14.0,
                                       ),
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model
@@ -585,11 +599,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           !_model.passwordCreateVisibility,
                                       decoration: InputDecoration(
                                         labelText: 'Your Password',
+                                        labelStyle: GoogleFonts.getFont(
+                                          'Roboto',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 14.0,
+                                        ),
                                         hintStyle: GoogleFonts.getFont(
                                           'Roboto',
                                           color: FlutterFlowTheme.of(context)
-                                              .accent2,
-                                          fontSize: 20.0,
+                                              .primaryText,
+                                          fontSize: 14.0,
                                         ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -641,18 +661,18 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             _model.passwordCreateVisibility
                                                 ? Icons.visibility_outlined
                                                 : Icons.visibility_off_outlined,
-                                            color: Color(0xFF262D34),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
                                             size: 20.0,
                                           ),
                                         ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Roboto',
-                                            color: Color(0xFF0F1113),
-                                            fontSize: 20.0,
-                                          ),
+                                      style: GoogleFonts.getFont(
+                                        'Roboto',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 14.0,
+                                      ),
                                       validator: _model
                                           .passwordCreateControllerValidator
                                           .asValidator(context),
@@ -679,7 +699,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0xFF262D34),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
                                               textStyle: TextStyle(
                                                 color:
                                                     FlutterFlowTheme.of(context)

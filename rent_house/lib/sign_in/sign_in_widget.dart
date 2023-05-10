@@ -62,7 +62,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                     'Cuban Rent House',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Roboto',
-                          color: Color(0xFF262D34),
+                          color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 30.0,
                         ),
                   ),
@@ -101,18 +101,17 @@ class _SignInWidgetState extends State<SignInWidget> {
                           Duration(milliseconds: 2000),
                           () => setState(() {}),
                         ),
-                        autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: 'Your Email',
                           labelStyle: TextStyle(
-                            color: Color(0xFF0F1113),
-                            fontSize: 20.0,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 14.0,
                           ),
                           hintStyle: GoogleFonts.getFont(
                             'Roboto',
-                            color: FlutterFlowTheme.of(context).accent2,
-                            fontSize: 20.0,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 14.0,
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -143,7 +142,6 @@ class _SignInWidgetState extends State<SignInWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           filled: true,
-                          fillColor: Color(0x00FFFFFF),
                           contentPadding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 20.0, 0.0),
                           suffixIcon:
@@ -163,8 +161,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                         ),
                         style: GoogleFonts.getFont(
                           'Roboto',
-                          color: Color(0xFF0F1113),
-                          fontSize: 20.0,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 14.0,
                         ),
                         textAlign: TextAlign.start,
                         keyboardType: TextInputType.emailAddress,
@@ -177,18 +175,17 @@ class _SignInWidgetState extends State<SignInWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 0.0),
                       child: TextFormField(
                         controller: _model.passwordController,
-                        autofocus: true,
                         obscureText: !_model.passwordVisibility,
                         decoration: InputDecoration(
                           labelText: 'Your Password',
                           labelStyle: TextStyle(
-                            color: FlutterFlowTheme.of(context).black600,
-                            fontSize: 20.0,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 14.0,
                           ),
                           hintStyle: GoogleFonts.getFont(
                             'Roboto',
-                            color: FlutterFlowTheme.of(context).accent2,
-                            fontSize: 20.0,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 14.0,
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -219,7 +216,6 @@ class _SignInWidgetState extends State<SignInWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           filled: true,
-                          fillColor: Color(0x00FFFFFF),
                           contentPadding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 20.0, 0.0),
                           suffixIcon: InkWell(
@@ -239,8 +235,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Roboto',
-                              color: Color(0xFF0F1113),
-                              fontSize: 20.0,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              fontSize: 14.0,
                             ),
                         validator: _model.passwordControllerValidator
                             .asValidator(context),
@@ -276,7 +272,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     0.0, 0.0, 0.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).gray600,
+                                color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -315,7 +311,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     0.0, 0.0, 0.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).primary,
+                                color: FlutterFlowTheme.of(context).gray600,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -323,8 +319,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                                       color: Colors.white,
                                     ),
                                 borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 2.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),

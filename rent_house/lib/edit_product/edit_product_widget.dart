@@ -3,7 +3,6 @@ import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -91,7 +90,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                       },
                       child: FaIcon(
                         FontAwesomeIcons.angleDoubleLeft,
-                        color: Colors.black,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 40.0,
                       ),
                     ),
@@ -120,7 +119,6 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                           city: _model.yourCityController.text,
                           municipality: _model.yourMunicipalityController.text,
                           locality: _model.yourLocalityController.text,
-                          image: _model.uploadedFileUrl,
                           contact: _model.yourContactController.text,
                         );
                         await widget.itemEditProduct!.reference
@@ -130,7 +128,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                       },
                       child: Icon(
                         Icons.done_all_outlined,
-                        color: Colors.black,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 45.0,
                       ),
                     ),
@@ -160,105 +158,84 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                   width: 2.0,
                                 ),
                               ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    1.0, 1.0, 1.0, 1.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  final selectedMedia =
+                                      await selectMediaWithSourceBottomSheet(
+                                    context: context,
+                                    allowPhoto: true,
+                                  );
+                                  if (selectedMedia != null &&
+                                      selectedMedia.every((m) =>
+                                          validateFileFormat(
+                                              m.storagePath, context))) {
+                                    setState(
+                                        () => _model.isDataUploading = true);
+                                    var selectedUploadedFiles =
+                                        <FFUploadedFile>[];
+                                    var downloadUrls = <String>[];
+                                    try {
+                                      selectedUploadedFiles = selectedMedia
+                                          .map((m) => FFUploadedFile(
+                                                name: m.storagePath
+                                                    .split('/')
+                                                    .last,
+                                                bytes: m.bytes,
+                                                height: m.dimensions?.height,
+                                                width: m.dimensions?.width,
+                                                blurHash: m.blurHash,
+                                              ))
+                                          .toList();
+
+                                      downloadUrls = (await Future.wait(
+                                        selectedMedia.map(
+                                          (m) async => await uploadData(
+                                              m.storagePath, m.bytes),
+                                        ),
+                                      ))
+                                          .where((u) => u != null)
+                                          .map((u) => u!)
+                                          .toList();
+                                    } finally {
+                                      _model.isDataUploading = false;
+                                    }
+                                    if (selectedUploadedFiles.length ==
+                                            selectedMedia.length &&
+                                        downloadUrls.length ==
+                                            selectedMedia.length) {
+                                      setState(() {
+                                        _model.uploadedLocalFile =
+                                            selectedUploadedFiles.first;
+                                        _model.uploadedFileUrl =
+                                            downloadUrls.first;
+                                      });
+                                    } else {
+                                      setState(() {});
+                                      return;
+                                    }
+                                  }
+
+                                  final houseUpdateData = createHouseRecordData(
+                                    image: _model.uploadedFileUrl,
+                                    imageAlt: widget.itemEditProduct!.image,
+                                  );
+                                  await widget.itemEditProduct!.reference
+                                      .update(houseUpdateData);
+                                },
                                 child: Image.network(
-                                  valueOrDefault<String>(
-                                    _model.uploadedFileUrl,
-                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/nzpikfn3jrh3/Logo_Rent_House.png',
-                                  ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.6,
-                                  height: 160.0,
+                                  widget.itemEditProduct!.image!,
+                                  width: 200.0,
+                                  height: 180.0,
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          final selectedMedia =
-                              await selectMediaWithSourceBottomSheet(
-                            context: context,
-                            imageQuality: 90,
-                            allowPhoto: true,
-                          );
-                          if (selectedMedia != null &&
-                              selectedMedia.every((m) =>
-                                  validateFileFormat(m.storagePath, context))) {
-                            setState(() => _model.isDataUploading = true);
-                            var selectedUploadedFiles = <FFUploadedFile>[];
-                            var downloadUrls = <String>[];
-                            try {
-                              selectedUploadedFiles = selectedMedia
-                                  .map((m) => FFUploadedFile(
-                                        name: m.storagePath.split('/').last,
-                                        bytes: m.bytes,
-                                        height: m.dimensions?.height,
-                                        width: m.dimensions?.width,
-                                        blurHash: m.blurHash,
-                                      ))
-                                  .toList();
-
-                              downloadUrls = (await Future.wait(
-                                selectedMedia.map(
-                                  (m) async =>
-                                      await uploadData(m.storagePath, m.bytes),
-                                ),
-                              ))
-                                  .where((u) => u != null)
-                                  .map((u) => u!)
-                                  .toList();
-                            } finally {
-                              _model.isDataUploading = false;
-                            }
-                            if (selectedUploadedFiles.length ==
-                                    selectedMedia.length &&
-                                downloadUrls.length == selectedMedia.length) {
-                              setState(() {
-                                _model.uploadedLocalFile =
-                                    selectedUploadedFiles.first;
-                                _model.uploadedFileUrl = downloadUrls.first;
-                              });
-                            } else {
-                              setState(() {});
-                              return;
-                            }
-                          }
-                        },
-                        text: '',
-                        icon: Icon(
-                          Icons.add_photo_alternate_outlined,
-                          size: 15.0,
-                        ),
-                        options: FFButtonOptions(
-                          width: 45.0,
-                          height: 45.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFFD8D8D8),
-                          textStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Outfit',
-                                    color: Color(0xFF191818),
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                          elevation: 1.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
-                          ),
-                        ),
                       ),
                     ),
                   ],

@@ -65,14 +65,11 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                 child: Stack(
                   alignment: AlignmentDirectional(0.0, -1.0),
                   children: [
-                    Align(
-                      alignment: AlignmentDirectional(0.05, -0.97),
-                      child: Image.asset(
-                        'assets/images/Snap_2023-05-01_at_18.08.21.png',
-                        width: double.infinity,
-                        height: 280.0,
-                        fit: BoxFit.cover,
-                      ),
+                    Image.asset(
+                      'assets/images/Snap_2023-05-01_at_18.08.21.png',
+                      width: double.infinity,
+                      height: 290.0,
+                      fit: BoxFit.cover,
                     ),
                     Container(
                       width: double.infinity,
@@ -109,13 +106,16 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                         ),
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Roboto',
-                                                    fontSize: 12.0,
-                                                  ),
+                                          labelStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Roboto',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .gray600,
+                                                fontSize: 14.0,
+                                              ),
                                           hintText: 'Search...',
                                           hintStyle: FlutterFlowTheme.of(
                                                   context)
@@ -124,14 +124,14 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                 fontFamily: 'Roboto',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 12.0,
+                                                        .gray600,
+                                                fontSize: 14.0,
                                               ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent1,
+                                                      .gray600,
                                               width: 1.0,
                                             ),
                                             borderRadius:
@@ -169,7 +169,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                           prefixIcon: Icon(
                                             Icons.search,
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                                .gray600,
                                             size: 16.0,
                                           ),
                                           suffixIcon: _model.textController!
@@ -184,7 +184,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                     Icons.clear,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryText,
+                                                        .gray600,
                                                     size: 22.0,
                                                   ),
                                                 )
@@ -194,7 +194,10 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Roboto',
-                                              fontSize: 12.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .gray600,
+                                              fontSize: 14.0,
                                             ),
                                         minLines: 1,
                                         validator: _model
@@ -225,13 +228,13 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                     child: FaIcon(
                                       FontAwesomeIcons.angleDoubleLeft,
                                       color:
-                                          FlutterFlowTheme.of(context).accent4,
+                                          FlutterFlowTheme.of(context).gray200,
                                       size: 40.0,
                                     ),
                                   ),
                                   Icon(
                                     Icons.house,
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: FlutterFlowTheme.of(context).success,
                                     size: 40.0,
                                   ),
                                   InkWell(
@@ -267,8 +270,15 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                 width: double.infinity,
                                 height: 700.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      FlutterFlowTheme.of(context).primary,
+                                      FlutterFlowTheme.of(context).secondary
+                                    ],
+                                    stops: [0.0, 1.0],
+                                    begin: AlignmentDirectional(0.0, -1.0),
+                                    end: AlignmentDirectional(0, 1.0),
+                                  ),
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(0.0),
                                     bottomRight: Radius.circular(0.0),
@@ -359,8 +369,9 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                           boxShadow: [
                                                             BoxShadow(
                                                               blurRadius: 8.0,
-                                                              color: Color(
-                                                                  0x230F1113),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
                                                               offset: Offset(
                                                                   0.0, 4.0),
                                                             )
@@ -382,39 +393,43 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                   MainAxisAlignment
                                                                       .spaceEvenly,
                                                               children: [
-                                                                Hero(
-                                                                  tag: verticalListHouseRecord
-                                                                      .image!,
-                                                                  transitionOnUserGestures:
-                                                                      true,
-                                                                  child:
-                                                                      ClipRRect(
-                                                                    borderRadius:
-                                                                        BorderRadius
-                                                                            .only(
-                                                                      bottomLeft:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                      bottomRight:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                      topLeft: Radius
-                                                                          .circular(
-                                                                              12.0),
-                                                                      topRight:
-                                                                          Radius.circular(
-                                                                              12.0),
-                                                                    ),
-                                                                    child: Image
-                                                                        .network(
-                                                                      verticalListHouseRecord
-                                                                          .image!,
-                                                                      width:
-                                                                          150.0,
-                                                                      height:
-                                                                          150.0,
-                                                                      fit: BoxFit
-                                                                          .cover,
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Hero(
+                                                                    tag: verticalListHouseRecord
+                                                                        .image!,
+                                                                    transitionOnUserGestures:
+                                                                        true,
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius
+                                                                              .only(
+                                                                        bottomLeft:
+                                                                            Radius.circular(0.0),
+                                                                        bottomRight:
+                                                                            Radius.circular(0.0),
+                                                                        topLeft:
+                                                                            Radius.circular(12.0),
+                                                                        topRight:
+                                                                            Radius.circular(12.0),
+                                                                      ),
+                                                                      child: Image
+                                                                          .network(
+                                                                        verticalListHouseRecord
+                                                                            .image!,
+                                                                        width:
+                                                                            150.0,
+                                                                        height:
+                                                                            150.0,
+                                                                        fit: BoxFit
+                                                                            .cover,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),

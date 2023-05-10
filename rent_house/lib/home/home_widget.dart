@@ -56,7 +56,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primary,
         body: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -111,7 +111,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Roboto',
-                                              fontSize: 20.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .gray600,
+                                              fontSize: 14.0,
                                             ),
                                         hintText: 'Search...',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -120,12 +123,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               fontFamily: 'Roboto',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 20.0,
+                                                      .gray600,
+                                              fontSize: 14.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: Color(0x00000000),
+                                            color: FlutterFlowTheme.of(context)
+                                                .gray600,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -156,11 +160,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               BorderRadius.circular(16.0),
                                         ),
                                         filled: true,
-                                        fillColor: Color(0x8AFFFFFF),
+                                        fillColor: Color(0x6DFFFFFF),
                                         prefixIcon: Icon(
                                           Icons.search,
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                              .gray600,
                                           size: 16.0,
                                         ),
                                         suffixIcon: _model
@@ -173,7 +177,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                 },
                                                 child: Icon(
                                                   Icons.clear,
-                                                  color: Color(0xFF757575),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .gray600,
                                                   size: 22.0,
                                                 ),
                                               )
@@ -181,7 +187,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       ),
                                       style: GoogleFonts.getFont(
                                         'Roboto',
-                                        fontSize: 20.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .gray600,
+                                        fontSize: 14.0,
                                       ),
                                       maxLines: null,
                                       validator: _model.textControllerValidator
@@ -193,15 +201,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 12.0, 16.0, 14.0),
+                                  30.0, 12.0, 30.0, 14.0),
                               child: Text(
                                 'Explore the best rental houses and rooms.',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.getFont(
                                   'Roboto',
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBtnText,
-                                  fontSize: 25.0,
+                                  color: FlutterFlowTheme.of(context).gray200,
+                                  fontSize: 20.0,
                                 ),
                               ),
                             ),
@@ -224,7 +231,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       },
                                       child: Icon(
                                         Icons.favorite_border,
-                                        color: Color(0xFFE0E0E0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .gray200,
                                         size: 40.0,
                                       ),
                                     ),
@@ -261,14 +269,16 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             color: Color(0x5F262D34),
                                             textStyle: GoogleFonts.getFont(
                                               'Roboto',
-                                              color: Color(0xFFE0E0E0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .gray200,
                                               fontSize: 30.0,
                                             ),
                                             elevation: 0.0,
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .gray200,
                                               width: 1.0,
                                             ),
                                             borderRadius:
@@ -288,7 +298,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       },
                                       child: Icon(
                                         Icons.person,
-                                        color: Color(0xFFE0E0E0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .gray200,
                                         size: 40.0,
                                       ),
                                     ),
@@ -323,7 +334,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       },
                                       child: Icon(
                                         Icons.person_add,
-                                        color: Color(0xFFE0E0E0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .gray200,
                                         size: 40.0,
                                       ),
                                     ),
@@ -337,13 +349,23 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 width: double.infinity,
                                 height: 700.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xFF0000F0),
+                                      FlutterFlowTheme.of(context).secondary
+                                    ],
+                                    stops: [0.0, 1.0],
+                                    begin: AlignmentDirectional(0.0, -1.0),
+                                    end: AlignmentDirectional(0, 1.0),
+                                  ),
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(0.0),
                                     bottomRight: Radius.circular(0.0),
                                     topLeft: Radius.circular(16.0),
                                     topRight: Radius.circular(16.0),
+                                  ),
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context).gray600,
                                   ),
                                 ),
                                 child: Padding(
@@ -430,8 +452,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           boxShadow: [
                                                             BoxShadow(
                                                               blurRadius: 8.0,
-                                                              color: Color(
-                                                                  0x600F1113),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
                                                               offset: Offset(
                                                                   0.0, 4.0),
                                                             )
@@ -782,7 +805,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             children: [
                                                                               FaIcon(
                                                                                 FontAwesomeIcons.eye,
-                                                                                color: Colors.black,
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
                                                                                 size: 15.0,
                                                                               ),
                                                                               Padding(

@@ -104,7 +104,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                     },
                     child: FaIcon(
                       FontAwesomeIcons.angleDoubleLeft,
-                      color: Colors.black,
+                      color: FlutterFlowTheme.of(context).primaryText,
                       size: 40.0,
                     ),
                   ),
@@ -130,7 +130,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                     },
                     child: Icon(
                       Icons.login_outlined,
-                      color: Colors.black,
+                      color: FlutterFlowTheme.of(context).primaryText,
                       size: 40.0,
                     ),
                   ),
@@ -149,7 +149,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                       child: Container(
                         width: MediaQuery.of(context).size.width * 1.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).accent3,
+                          color: FlutterFlowTheme.of(context).grayIcon,
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 1.0,
@@ -199,6 +199,8 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                           .headlineSmall
                                           .override(
                                             fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .black600,
                                             fontSize: 16.0,
                                           ),
                                     ),
@@ -219,6 +221,9 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                               .headlineSmall
                                               .override(
                                                 fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .black600,
                                                 fontSize: 14.0,
                                               ),
                                         ),
@@ -247,7 +252,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                 fontFamily: 'Outfit',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                        .black600,
                                                 fontSize: 14.0,
                                                 fontWeight: FontWeight.normal,
                                               ),
@@ -272,90 +277,89 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   if (Theme.of(context).brightness == Brightness.light)
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 1.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 12.0, 24.0, 12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Switch to Dark Mode',
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                    Container(
+                      width: MediaQuery.of(context).size.width * 1.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 12.0, 24.0, 12.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Switch to Dark Mode',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                  ),
+                            ),
+                            Container(
+                              width: 80.0,
+                              height: 40.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFB4B7B7),
+                                borderRadius: BorderRadius.circular(20.0),
                               ),
-                              Container(
-                                width: 80.0,
-                                height: 40.0,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFB4B7B7),
-                                  borderRadius: BorderRadius.circular(20.0),
-                                ),
-                                child: Stack(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  children: [
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(0.95, 0.0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 8.0, 0.0),
-                                        child: Icon(
-                                          Icons.nights_stay,
+                              child: Stack(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0.95, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 8.0, 0.0),
+                                      child: Icon(
+                                        Icons.nights_stay,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 20.0,
+                                      ),
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: AlignmentDirectional(-0.85, 0.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        setDarkModeSetting(
+                                            context, ThemeMode.dark);
+                                      },
+                                      child: Container(
+                                        width: 36.0,
+                                        height: 36.0,
+                                        decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 20.0,
+                                              .secondaryBackground,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4.0,
+                                              color: Color(0x430B0D0F),
+                                              offset: Offset(0.0, 2.0),
+                                            )
+                                          ],
+                                          borderRadius:
+                                              BorderRadius.circular(30.0),
+                                          shape: BoxShape.rectangle,
                                         ),
                                       ),
+                                    ).animateOnActionTrigger(
+                                      animationsMap[
+                                          'containerOnActionTriggerAnimation1']!,
                                     ),
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(-0.85, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          setDarkModeSetting(
-                                              context, ThemeMode.dark);
-                                        },
-                                        child: Container(
-                                          width: 36.0,
-                                          height: 36.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4.0,
-                                                color: Color(0x430B0D0F),
-                                                offset: Offset(0.0, 2.0),
-                                              )
-                                            ],
-                                            borderRadius:
-                                                BorderRadius.circular(30.0),
-                                            shape: BoxShape.rectangle,
-                                          ),
-                                        ),
-                                      ).animateOnActionTrigger(
-                                        animationsMap[
-                                            'containerOnActionTriggerAnimation1']!,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -363,7 +367,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                     Container(
                       width: MediaQuery.of(context).size.width * 1.0,
                       decoration: BoxDecoration(
-                        color: Color(0xFF252D34),
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(

@@ -1,11 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/flutter_flow/flutter_flow_checkbox_group.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +80,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                       },
                       child: FaIcon(
                         FontAwesomeIcons.angleDoubleLeft,
-                        color: Colors.black,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 40.0,
                       ),
                     ),
@@ -123,7 +121,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                       },
                       child: Icon(
                         Icons.done_all_outlined,
-                        color: Colors.black,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 45.0,
                       ),
                     ),
@@ -725,46 +723,9 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        'Star Property',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
                       Container(
                         width: 200.0,
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 0.0, 0.0),
-                          child: FlutterFlowCheckboxGroup(
-                            options: [
-                              'Rooms (2 or more)',
-                              'Heated',
-                              'Pool',
-                              'Garage',
-                              'Additional services'
-                            ],
-                            onChanged: (val) => setState(
-                                () => _model.checkboxGroupValues = val),
-                            controller: _model.checkboxGroupValueController ??=
-                                FormFieldController<List<String>>(
-                              [],
-                            ),
-                            activeColor: FlutterFlowTheme.of(context).primary,
-                            checkColor: Colors.white,
-                            checkboxBorderColor:
-                                FlutterFlowTheme.of(context).accent2,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 10.0,
-                                ),
-                            initialized: _model.checkboxGroupValues != null,
-                          ),
-                        ),
+                        decoration: BoxDecoration(),
                       ),
                     ],
                   ),

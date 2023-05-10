@@ -79,6 +79,13 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                       height: 300.0,
                       decoration: BoxDecoration(
                         color: Color(0x8D090F13),
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 4.0,
+                            color: Color(0x33000000),
+                            offset: Offset(0.0, 2.0),
+                          )
+                        ],
                       ),
                     ),
                     Align(
@@ -110,7 +117,10 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Roboto',
-                                              fontSize: 12.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .gray600,
+                                              fontSize: 14.0,
                                             ),
                                         hintText: 'Search...',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -119,12 +129,13 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                               fontFamily: 'Roboto',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 12.0,
+                                                      .gray600,
+                                              fontSize: 14.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: Color(0x00000000),
+                                            color: FlutterFlowTheme.of(context)
+                                                .gray600,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -155,12 +166,11 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                               BorderRadius.circular(16.0),
                                         ),
                                         filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                        fillColor: Color(0x6DFFFFFF),
                                         prefixIcon: Icon(
                                           Icons.search,
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                              .gray600,
                                           size: 16.0,
                                         ),
                                         suffixIcon: _model
@@ -173,7 +183,9 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                 },
                                                 child: Icon(
                                                   Icons.clear,
-                                                  color: Color(0xFF757575),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .gray600,
                                                   size: 22.0,
                                                 ),
                                               )
@@ -203,8 +215,8 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                     .displaySmall
                                     .override(
                                       fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
+                                      color:
+                                          FlutterFlowTheme.of(context).gray200,
                                       fontSize: 18.0,
                                     ),
                               ),
@@ -228,29 +240,10 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                     child: FaIcon(
                                       FontAwesomeIcons.angleDoubleLeft,
                                       color:
-                                          FlutterFlowTheme.of(context).accent3,
+                                          FlutterFlowTheme.of(context).gray200,
                                       size: 40.0,
                                     ),
                                   ),
-                                  if (!loggedIn)
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed('Login');
-                                        },
-                                        child: Icon(
-                                          Icons.person_add,
-                                          color: Color(0xFFE0E0E0),
-                                          size: 40.0,
-                                        ),
-                                      ),
-                                    ),
                                   if (loggedIn)
                                     InkWell(
                                       splashColor: Colors.transparent,
@@ -262,7 +255,8 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                       },
                                       child: Icon(
                                         Icons.person,
-                                        color: Color(0xFFE0E0E0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .gray200,
                                         size: 40.0,
                                       ),
                                     ),
@@ -374,8 +368,9 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                           boxShadow: [
                                                             BoxShadow(
                                                               blurRadius: 8.0,
-                                                              color: Color(
-                                                                  0x3B0F1113),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
                                                               offset: Offset(
                                                                   0.0, 4.0),
                                                             )
@@ -431,70 +426,79 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceEvenly,
+                                                                        .spaceBetween,
                                                                 children: [
-                                                                  Hero(
-                                                                    tag: verticalListHouseRecord
-                                                                        .image!,
-                                                                    transitionOnUserGestures:
-                                                                        true,
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              12.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        verticalListHouseRecord
-                                                                            .image!,
-                                                                        width:
-                                                                            150.0,
-                                                                        height:
-                                                                            150.0,
-                                                                        fit: BoxFit
-                                                                            .cover,
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            25.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Hero(
+                                                                      tag: verticalListHouseRecord
+                                                                          .image!,
+                                                                      transitionOnUserGestures:
+                                                                          true,
+                                                                      child:
+                                                                          ClipRRect(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(12.0),
+                                                                        child: Image
+                                                                            .network(
+                                                                          verticalListHouseRecord
+                                                                              .image!,
+                                                                          width:
+                                                                              150.0,
+                                                                          height:
+                                                                              150.0,
+                                                                          fit: BoxFit
+                                                                              .cover,
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                  Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Text(
-                                                                        verticalListHouseRecord
-                                                                            .city!,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              fontSize: 12.0,
-                                                                            ),
-                                                                      ),
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
                                                                             0.0,
-                                                                            2.0,
                                                                             0.0,
+                                                                            20.0,
                                                                             0.0),
-                                                                        child:
-                                                                            Text(
+                                                                    child:
+                                                                        Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            verticalListHouseRecord.name!,
+                                                                            textAlign:
+                                                                                TextAlign.center,
+                                                                            style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                  fontFamily: 'Roboto',
+                                                                                  fontSize: 14.0,
+                                                                                ),
+                                                                          ),
+                                                                        ),
+                                                                        Text(
                                                                           verticalListHouseRecord
-                                                                              .municipality!,
+                                                                              .city!,
                                                                           style: FlutterFlowTheme.of(context)
-                                                                              .bodySmall
+                                                                              .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Roboto',
-                                                                                fontSize: 10.0,
+                                                                                fontFamily: 'Poppins',
+                                                                                fontSize: 12.0,
                                                                               ),
                                                                         ),
-                                                                      ),
-                                                                      Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Padding(
+                                                                        Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               2.0,
@@ -502,57 +506,74 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            verticalListHouseRecord.locality!,
+                                                                            verticalListHouseRecord.municipality!,
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: 'Roboto',
                                                                                   fontSize: 10.0,
                                                                                 ),
                                                                           ),
                                                                         ),
-                                                                      ),
-                                                                      Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              2.0,
+                                                                        Align(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
-                                                                              Container(
-                                                                            height:
-                                                                                28.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).primaryText,
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                            ),
-                                                                            alignment:
-                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                2.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
-                                                                              child: Text(
-                                                                                formatNumber(
-                                                                                  verticalListHouseRecord.price!,
-                                                                                  formatType: FormatType.custom,
-                                                                                  format: '\$ 0 USD',
-                                                                                  locale: '',
+                                                                                Text(
+                                                                              verticalListHouseRecord.locality!,
+                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                    fontFamily: 'Roboto',
+                                                                                    fontSize: 10.0,
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        Align(
+                                                                          alignment: AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                2.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Container(
+                                                                              height: 28.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                              ),
+                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
+                                                                                child: Text(
+                                                                                  formatNumber(
+                                                                                    verticalListHouseRecord.price!,
+                                                                                    formatType: FormatType.custom,
+                                                                                    format: '\$ 0 USD',
+                                                                                    locale: '',
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Poppins',
+                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                        fontSize: 12.0,
+                                                                                      ),
                                                                                 ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Poppins',
-                                                                                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      fontSize: 12.0,
-                                                                                    ),
                                                                               ),
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      ),
-                                                                    ],
+                                                                      ],
+                                                                    ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -573,38 +594,49 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                             .max,
                                                                     mainAxisAlignment:
                                                                         MainAxisAlignment
-                                                                            .spaceEvenly,
+                                                                            .spaceBetween,
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            25.0,
                                                                             0.0,
-                                                                            5.0,
                                                                             0.0,
                                                                             0.0),
                                                                         child:
-                                                                            Text(
-                                                                          verticalListHouseRecord
-                                                                              .name!,
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .titleMedium
-                                                                              .override(
-                                                                                fontFamily: 'Roboto',
-                                                                                fontSize: 14.0,
-                                                                              ),
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [],
                                                                         ),
                                                                       ),
-                                                                      Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          verticalListHouseRecord
-                                                                              .views
-                                                                              ?.toString(),
-                                                                          '0',
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            25.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Icon(
+                                                                              Icons.remove_red_eye_outlined,
+                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                              size: 16.0,
+                                                                            ),
+                                                                            Text(
+                                                                              valueOrDefault<String>(
+                                                                                verticalListHouseRecord.views?.toString(),
+                                                                                '0',
+                                                                              ),
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Poppins',
+                                                                                    fontSize: 12.0,
+                                                                                  ),
+                                                                            ),
+                                                                          ],
                                                                         ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
                                                                       ),
                                                                     ],
                                                                   ),
