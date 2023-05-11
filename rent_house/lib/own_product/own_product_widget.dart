@@ -519,21 +519,40 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0),
                                                                             child:
+                                                                                Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                              child: Text(
-                                                                                formatNumber(
-                                                                                  verticalListHouseRecord.price!,
-                                                                                  formatType: FormatType.custom,
-                                                                                  format: '\$ 0 USD',
-                                                                                  locale: '',
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Poppins',
-                                                                                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      fontSize: 10.0,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                  child: Text(
+                                                                                    formatNumber(
+                                                                                      verticalListHouseRecord.price!,
+                                                                                      formatType: FormatType.custom,
+                                                                                      format: '\$ 0 ',
+                                                                                      locale: '',
                                                                                     ),
-                                                                              ),
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Poppins',
+                                                                                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          fontSize: 10.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                ),
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 8.0, 0.0),
+                                                                                  child: Text(
+                                                                                    valueOrDefault<String>(
+                                                                                      verticalListHouseRecord.currency,
+                                                                                      'Currency',
+                                                                                    ),
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Poppins',
+                                                                                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          fontSize: 10.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                ),
+                                                                              ],
                                                                             ),
                                                                           ),
                                                                         ),

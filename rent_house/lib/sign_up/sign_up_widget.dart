@@ -91,7 +91,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   children: [
                     Text(
                       'Sign Up',
-                      style: FlutterFlowTheme.of(context).bodyMedium,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 18.0,
+                          ),
                     ),
                     Padding(
                       padding:

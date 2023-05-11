@@ -9,6 +9,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'details_model.dart';
 export 'details_model.dart';
 
@@ -80,7 +81,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                               size: 40.0,
                             ),
                           ),
-                          if (widget.itemHouse!.favorites!
+                          if (!widget.itemHouse!.favorites!
                               .toList()
                               .contains(currentUserReference))
                             InkWell(
@@ -173,19 +174,51 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
-                            child: Text(
-                              widget.itemHouse!.name!,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.normal,
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: Text(
+                                  widget.itemHouse!.name!,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                ),
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    'Rent By:',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 12.0,
+                                        ),
                                   ),
-                            ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        2.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      widget.itemHouse!.rentBy!,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 12.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -338,7 +371,10 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                     alignment: AlignmentDirectional(0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await launchURL('tel:{{currentItem.contact}}');
+                        await launchUrl(Uri(
+                          scheme: 'tel',
+                          path: widget.itemHouse!.contact!,
+                        ));
                       },
                       text: '',
                       icon: Icon(
@@ -392,13 +428,34 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 0.0, 0.0, 0.0),
+                                    8.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   formatNumber(
                                     widget.itemHouse!.price!,
                                     formatType: FormatType.custom,
-                                    format: '\$ 0 USD',
+                                    format: '\$ 0',
                                     locale: '',
+                                  ),
+                                  textAlign: TextAlign.start,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    2.0, 0.0, 8.0, 0.0),
+                                child: Text(
+                                  valueOrDefault<String>(
+                                    widget.itemHouse!.currency,
+                                    'Currency',
                                   ),
                                   textAlign: TextAlign.start,
                                   style: FlutterFlowTheme.of(context)

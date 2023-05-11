@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -101,7 +102,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                       controller: _model.textController,
                                       onChanged: (_) => EasyDebounce.debounce(
                                         '_model.textController',
-                                        Duration(milliseconds: 2000),
+                                        Duration(milliseconds: 250),
                                         () => setState(() {}),
                                       ),
                                       obscureText: false,
@@ -189,7 +190,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                 .gray600,
                                             fontSize: 14.0,
                                           ),
-                                      maxLines: null,
+                                      minLines: 1,
                                       validator: _model.textControllerValidator
                                           .asValidator(context),
                                     ),
@@ -216,7 +217,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                     child: FaIcon(
                                       FontAwesomeIcons.angleDoubleLeft,
                                       color:
-                                          FlutterFlowTheme.of(context).accent2,
+                                          FlutterFlowTheme.of(context).gray200,
                                       size: 40.0,
                                     ),
                                   ),
@@ -325,291 +326,257 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                   final verticalListUsersRecord =
                                                       verticalListUsersRecordList[
                                                           verticalListIndex];
-                                                  return Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 8.0,
-                                                                16.0, 8.0),
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        boxShadow: [
-                                                          BoxShadow(
-                                                            blurRadius: 8.0,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                            offset: Offset(
-                                                                0.0, 4.0),
-                                                          )
-                                                        ],
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(12.0),
-                                                      ),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceAround,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                  return Visibility(
+                                                    visible: functions.showSearchResultUser(
+                                                            _model
+                                                                .textController
+                                                                .text,
+                                                            verticalListUsersRecord
+                                                                .displayName!,
+                                                            verticalListUsersRecord
+                                                                .email!,
+                                                            verticalListUsersRecord
+                                                                .phoneNumber!) ??
+                                                        true,
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  8.0,
+                                                                  16.0,
+                                                                  8.0),
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              blurRadius: 8.0,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                              offset: Offset(
+                                                                  0.0, 4.0),
+                                                            )
+                                                          ],
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                        ),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
+                                                                          0.0,
                                                                           10.0,
                                                                           0.0,
-                                                                          0.0,
                                                                           0.0),
-                                                                  child: Hero(
-                                                                    tag: valueOrDefault<
-                                                                        String>(
-                                                                      verticalListUsersRecord
-                                                                          .photoUrl,
-                                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/h1ufndtvw7bq/profile.png' +
-                                                                          '$verticalListIndex',
-                                                                    ),
-                                                                    transitionOnUserGestures:
-                                                                        true,
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              18.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          verticalListUsersRecord
-                                                                              .photoUrl,
-                                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/h1ufndtvw7bq/profile.png',
-                                                                        ),
-                                                                        width:
-                                                                            130.0,
-                                                                        height:
-                                                                            130.0,
-                                                                        fit: BoxFit
-                                                                            .cover,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      if (valueOrDefault<
-                                                                              bool>(
-                                                                          currentUserDocument
-                                                                              ?.isAdmin,
-                                                                          false))
-                                                                        AuthUserStreamWidget(
-                                                                          builder: (context) =>
-                                                                              FFButtonWidget(
-                                                                            onPressed:
-                                                                                () async {
-                                                                              var confirmDialogResponse = await showDialog<bool>(
-                                                                                    context: context,
-                                                                                    builder: (alertDialogContext) {
-                                                                                      return AlertDialog(
-                                                                                        title: Text('Delete User'),
-                                                                                        content: Text('Are you shure ?'),
-                                                                                        actions: [
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                            child: Text('Cancel'),
-                                                                                          ),
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                            child: Text('Confirm'),
-                                                                                          ),
-                                                                                        ],
-                                                                                      );
-                                                                                    },
-                                                                                  ) ??
-                                                                                  false;
-                                                                              if (confirmDialogResponse) {
-                                                                                await verticalListUsersRecord.reference.delete();
-                                                                              }
-                                                                            },
-                                                                            text:
-                                                                                'Delete',
-                                                                            icon:
-                                                                                Icon(
-                                                                              Icons.delete_forever_sharp,
-                                                                              size: 15.0,
-                                                                            ),
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              width: 130.0,
-                                                                              height: 30.0,
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                                                              color: FlutterFlowTheme.of(context).error,
-                                                                              textStyle: TextStyle(
-                                                                                color: Colors.white,
-                                                                                fontWeight: FontWeight.w300,
-                                                                                fontSize: 14.0,
-                                                                              ),
-                                                                              borderSide: BorderSide(
-                                                                                color: Colors.transparent,
-                                                                                width: 1.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          verticalListUsersRecord
-                                                                              .phoneNumber!,
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style:
-                                                                              TextStyle(
-                                                                            fontSize:
-                                                                                12.0,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceEvenly,
-                                                                          children: [
-                                                                            InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                await launchURL('tel:{{currentItem.phone_number}}');
-                                                                              },
-                                                                              child: Icon(
-                                                                                Icons.phone,
-                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                size: 38.0,
-                                                                              ),
-                                                                            ),
-                                                                            InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                await launchUrl(Uri(
-                                                                                  scheme: 'tel',
-                                                                                  path: verticalListUsersRecord.phoneNumber!,
-                                                                                ));
-                                                                              },
-                                                                              child: FaIcon(
-                                                                                FontAwesomeIcons.whatsapp,
-                                                                                color: FlutterFlowTheme.of(context).success,
-                                                                                size: 45.0,
-                                                                              ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .start,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Row(
+                                                              child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .center,
+                                                                        .spaceAround,
                                                                 children: [
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
+                                                                            10.0,
                                                                             0.0,
-                                                                            5.0,
                                                                             0.0,
-                                                                            2.0),
-                                                                    child: Text(
-                                                                      verticalListUsersRecord
-                                                                          .displayName!,
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: GoogleFonts
-                                                                          .getFont(
-                                                                        'Roboto',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontWeight:
-                                                                            FontWeight.normal,
-                                                                        fontSize:
-                                                                            14.0,
+                                                                            0.0),
+                                                                    child: Hero(
+                                                                      tag: valueOrDefault<
+                                                                          String>(
+                                                                        verticalListUsersRecord
+                                                                            .photoUrl,
+                                                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/h1ufndtvw7bq/profile.png' +
+                                                                            '$verticalListIndex',
                                                                       ),
+                                                                      transitionOnUserGestures:
+                                                                          true,
+                                                                      child:
+                                                                          ClipRRect(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(18.0),
+                                                                        child: Image
+                                                                            .network(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            verticalListUsersRecord.photoUrl,
+                                                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/h1ufndtvw7bq/profile.png',
+                                                                          ),
+                                                                          width:
+                                                                              130.0,
+                                                                          height:
+                                                                              130.0,
+                                                                          fit: BoxFit
+                                                                              .cover,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    child:
+                                                                        Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .center,
+                                                                      children: [
+                                                                        if (valueOrDefault<bool>(
+                                                                            currentUserDocument?.isAdmin,
+                                                                            false))
+                                                                          AuthUserStreamWidget(
+                                                                            builder: (context) =>
+                                                                                FFButtonWidget(
+                                                                              onPressed: () async {
+                                                                                var confirmDialogResponse = await showDialog<bool>(
+                                                                                      context: context,
+                                                                                      builder: (alertDialogContext) {
+                                                                                        return AlertDialog(
+                                                                                          title: Text('Delete User'),
+                                                                                          content: Text('Are you shure ?'),
+                                                                                          actions: [
+                                                                                            TextButton(
+                                                                                              onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                              child: Text('Cancel'),
+                                                                                            ),
+                                                                                            TextButton(
+                                                                                              onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                              child: Text('Confirm'),
+                                                                                            ),
+                                                                                          ],
+                                                                                        );
+                                                                                      },
+                                                                                    ) ??
+                                                                                    false;
+                                                                                if (confirmDialogResponse) {
+                                                                                  await verticalListUsersRecord.reference.delete();
+                                                                                }
+                                                                              },
+                                                                              text: 'Delete',
+                                                                              icon: Icon(
+                                                                                Icons.delete_forever_sharp,
+                                                                                size: 15.0,
+                                                                              ),
+                                                                              options: FFButtonOptions(
+                                                                                width: 130.0,
+                                                                                height: 30.0,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                color: FlutterFlowTheme.of(context).error,
+                                                                                textStyle: TextStyle(
+                                                                                  color: Colors.white,
+                                                                                  fontWeight: FontWeight.w300,
+                                                                                  fontSize: 14.0,
+                                                                                ),
+                                                                                borderSide: BorderSide(
+                                                                                  color: Colors.transparent,
+                                                                                  width: 1.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            verticalListUsersRecord.phoneNumber!,
+                                                                            textAlign:
+                                                                                TextAlign.center,
+                                                                            style:
+                                                                                TextStyle(
+                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                              fontSize: 14.0,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.spaceEvenly,
+                                                                            children: [
+                                                                              InkWell(
+                                                                                splashColor: Colors.transparent,
+                                                                                focusColor: Colors.transparent,
+                                                                                hoverColor: Colors.transparent,
+                                                                                highlightColor: Colors.transparent,
+                                                                                onTap: () async {
+                                                                                  await launchUrl(Uri(
+                                                                                    scheme: 'tel',
+                                                                                    path: verticalListUsersRecord.phoneNumber!,
+                                                                                  ));
+                                                                                },
+                                                                                child: Icon(
+                                                                                  Icons.phone,
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  size: 38.0,
+                                                                                ),
+                                                                              ),
+                                                                              InkWell(
+                                                                                splashColor: Colors.transparent,
+                                                                                focusColor: Colors.transparent,
+                                                                                hoverColor: Colors.transparent,
+                                                                                highlightColor: Colors.transparent,
+                                                                                onTap: () async {
+                                                                                  await launchURL('https://wa.me/{{currentItem.phone_}}');
+                                                                                },
+                                                                                child: FaIcon(
+                                                                                  FontAwesomeIcons.whatsapp,
+                                                                                  color: FlutterFlowTheme.of(context).success,
+                                                                                  size: 45.0,
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ],
                                                                     ),
                                                                   ),
                                                                 ],
                                                               ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0),
-                                                                child: Row(
+                                                            ),
+                                                            Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
@@ -617,33 +584,25 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                       MainAxisAlignment
                                                                           .center,
                                                                   children: [
-                                                                    InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        await launchURL(
-                                                                            'mailto:{{currentItem.email}}');
-                                                                      },
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          2.0),
                                                                       child:
                                                                           Text(
                                                                         verticalListUsersRecord
-                                                                            .email!,
+                                                                            .displayName!,
+                                                                        textAlign:
+                                                                            TextAlign.center,
                                                                         style: GoogleFonts
                                                                             .getFont(
                                                                           'Roboto',
                                                                           color:
-                                                                              FlutterFlowTheme.of(context).info,
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                          fontWeight:
+                                                                              FontWeight.normal,
                                                                           fontSize:
                                                                               14.0,
                                                                         ),
@@ -651,36 +610,81 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                     ),
                                                                   ],
                                                                 ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0,
-                                                                            5.0),
-                                                                child: Text(
-                                                                  verticalListUsersRecord
-                                                                      .createdTime!
-                                                                      .toString(),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: GoogleFonts
-                                                                      .getFont(
-                                                                    'Roboto',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .normal,
-                                                                    fontSize:
-                                                                        10.0,
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          2.0),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          await launchURL(
+                                                                              'mailto:{{currentItem.email}}');
+                                                                        },
+                                                                        child:
+                                                                            Text(
+                                                                          verticalListUsersRecord
+                                                                              .email!,
+                                                                          style:
+                                                                              GoogleFonts.getFont(
+                                                                            'Roboto',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).info,
+                                                                            fontSize:
+                                                                                14.0,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ],
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0,
+                                                                          5.0),
+                                                                  child: Text(
+                                                                    verticalListUsersRecord
+                                                                        .createdTime!
+                                                                        .toString(),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style: GoogleFonts
+                                                                        .getFont(
+                                                                      'Roboto',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .normal,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                   );

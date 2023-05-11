@@ -90,7 +90,7 @@ class _RecoverPasswordWidgetState extends State<RecoverPasswordWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pop();
+                        context.pushNamed('SignIn');
                       },
                       child: FaIcon(
                         FontAwesomeIcons.angleDoubleLeft,
@@ -254,7 +254,7 @@ class _RecoverPasswordWidgetState extends State<RecoverPasswordWidget>
                           context: context,
                         );
 
-                        context.pushNamed('Login');
+                        context.pushNamed('SignIn');
                       },
                       child: Container(
                         width: double.infinity,

@@ -79,11 +79,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? HomeWidget() : InitialWidget(),
         ),
         FFRoute(
-          name: 'Login',
-          path: '/login',
-          builder: (context, params) => LoginWidget(),
-        ),
-        FFRoute(
           name: 'Home',
           path: '/home',
           builder: (context, params) => HomeWidget(),
@@ -97,11 +92,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => DetailsWidget(
             itemHouse: params.getParam('itemHouse', ParamType.Document),
           ),
-        ),
-        FFRoute(
-          name: 'Transition',
-          path: '/transition',
-          builder: (context, params) => TransitionWidget(),
         ),
         FFRoute(
           name: 'EditProfile',
@@ -155,11 +145,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => FavoritesWidget(),
         ),
         FFRoute(
-          name: 'LoginNew',
-          path: '/loginNew',
-          builder: (context, params) => LoginNewWidget(),
-        ),
-        FFRoute(
           name: 'SignUp',
           path: '/signUp',
           builder: (context, params) => SignUpWidget(),
@@ -173,6 +158,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Initial',
           path: '/initial',
           builder: (context, params) => InitialWidget(),
+        ),
+        FFRoute(
+          name: 'Info',
+          path: '/info',
+          builder: (context, params) => InfoWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

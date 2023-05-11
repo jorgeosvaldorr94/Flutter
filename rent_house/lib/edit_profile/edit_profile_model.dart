@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 
 class EditProfileModel extends FlutterFlowModel {
@@ -25,7 +24,6 @@ class EditProfileModel extends FlutterFlowModel {
   String? Function(BuildContext, String?)? yourNameControllerValidator;
   // State field(s) for yourPhone widget.
   TextEditingController? yourPhoneController;
-  final yourPhoneMask = MaskTextInputFormatter(mask: '### #### ####');
   String? Function(BuildContext, String?)? yourPhoneControllerValidator;
   // State field(s) for yourEmail widget.
   TextEditingController? yourEmailController;

@@ -553,21 +553,40 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                                 borderRadius: BorderRadius.circular(12.0),
                                                                               ),
                                                                               alignment: AlignmentDirectional(0.0, 0.0),
-                                                                              child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
-                                                                                child: Text(
-                                                                                  formatNumber(
-                                                                                    verticalListHouseRecord.price!,
-                                                                                    formatType: FormatType.custom,
-                                                                                    format: '\$ 0 USD',
-                                                                                    locale: '',
-                                                                                  ),
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Poppins',
-                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        fontSize: 12.0,
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: [
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      formatNumber(
+                                                                                        verticalListHouseRecord.price!,
+                                                                                        formatType: FormatType.custom,
+                                                                                        format: '\$ 0',
+                                                                                        locale: '',
                                                                                       ),
-                                                                                ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Poppins',
+                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            fontSize: 12.0,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 8.0, 0.0),
+                                                                                    child: Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        verticalListHouseRecord.currency,
+                                                                                        'Currency',
+                                                                                      ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Poppins',
+                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            fontSize: 12.0,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
                                                                               ),
                                                                             ),
                                                                           ),
@@ -606,7 +625,25 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                             Row(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
-                                                                          children: [],
+                                                                          children: [
+                                                                            Text(
+                                                                              'Rent By:',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Poppins',
+                                                                                    fontSize: 12.0,
+                                                                                  ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                verticalListHouseRecord.rentBy!,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Poppins',
+                                                                                      fontSize: 12.0,
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                       ),
                                                                       Padding(

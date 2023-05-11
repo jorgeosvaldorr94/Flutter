@@ -77,7 +77,7 @@ bool? showSearchResultUser(
   String textSearchFor,
   String textSearchIn,
   String textSearchIn2,
-  double textSearchInInteger,
+  String textSearchInInteger,
 ) {
   {
     if (textSearchFor.isEmpty) {

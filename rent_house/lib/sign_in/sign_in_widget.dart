@@ -89,7 +89,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                   children: [
                     Text(
                       'Sign In',
-                      style: FlutterFlowTheme.of(context).bodyMedium,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 18.0,
+                          ),
                     ),
                     Padding(
                       padding:
