@@ -51,6 +51,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
+        top: true,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -81,8 +82,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                               size: 40.0,
                             ),
                           ),
-                          if (!widget.itemHouse!.favorites!
-                              .toList()
+                          if (!widget.itemHouse!.favorites
                               .contains(currentUserReference))
                             InkWell(
                               splashColor: Colors.transparent,
@@ -104,8 +104,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                 size: 40.0,
                               ),
                             ),
-                          if (widget.itemHouse!.favorites!
-                              .toList()
+                          if (widget.itemHouse!.favorites
                               .contains(currentUserReference))
                             InkWell(
                               splashColor: Colors.transparent,
@@ -181,7 +180,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
                                 child: Text(
-                                  widget.itemHouse!.name!,
+                                  widget.itemHouse!.name,
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
                                       .override(
@@ -207,7 +206,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         2.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      widget.itemHouse!.rentBy!,
+                                      widget.itemHouse!.rentBy,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -235,15 +234,15 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                widget.itemHouse!.city!,
+                                widget.itemHouse!.city,
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                               Text(
-                                widget.itemHouse!.municipality!,
+                                widget.itemHouse!.municipality,
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                               Text(
-                                widget.itemHouse!.locality!,
+                                widget.itemHouse!.locality,
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                             ],
@@ -262,7 +261,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 2.0, 0.0, 0.0),
                                       child: Text(
-                                        widget.itemHouse!.specifications!,
+                                        widget.itemHouse!.specifications,
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -291,7 +290,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 0.0, 0.0),
                                       child: Text(
-                                        widget.itemHouse!.contact!,
+                                        widget.itemHouse!.contact,
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -343,7 +342,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   25.0, 0.0, 25.0, 24.0),
                               child: Text(
-                                widget.itemHouse!.description!,
+                                widget.itemHouse!.description,
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
@@ -373,7 +372,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                       onPressed: () async {
                         await launchUrl(Uri(
                           scheme: 'tel',
-                          path: widget.itemHouse!.contact!,
+                          path: widget.itemHouse!.contact,
                         ));
                       },
                       text: '',
@@ -431,7 +430,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                     8.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   formatNumber(
-                                    widget.itemHouse!.price!,
+                                    widget.itemHouse!.price,
                                     formatType: FormatType.custom,
                                     format: '\$ 0',
                                     locale: '',
@@ -478,7 +477,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                     child: FFButtonWidget(
                       onPressed: () async {
                         await launchURL(
-                            'https://wa.me/{{currentItem.contact}}');
+                            'https://api.whatsapp.com/send?phone=${widget.itemHouse!.contact}&text=Hola,%le%escribo%desde%Rent%Houses%soy%${currentUserDisplayName}');
                       },
                       text: '',
                       icon: FaIcon(

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -332,11 +333,11 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                 .textController
                                                                 .text,
                                                             verticalListUsersRecord
-                                                                .displayName!,
+                                                                .displayName,
                                                             verticalListUsersRecord
-                                                                .email!,
+                                                                .email,
                                                             verticalListUsersRecord
-                                                                .phoneNumber!) ??
+                                                                .phoneNumber) ??
                                                         true,
                                                     child: Padding(
                                                       padding:
@@ -502,7 +503,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            verticalListUsersRecord.phoneNumber!,
+                                                                            verticalListUsersRecord.phoneNumber,
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style:
@@ -533,7 +534,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                                 onTap: () async {
                                                                                   await launchUrl(Uri(
                                                                                     scheme: 'tel',
-                                                                                    path: verticalListUsersRecord.phoneNumber!,
+                                                                                    path: verticalListUsersRecord.phoneNumber,
                                                                                   ));
                                                                                 },
                                                                                 child: Icon(
@@ -548,7 +549,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                                 hoverColor: Colors.transparent,
                                                                                 highlightColor: Colors.transparent,
                                                                                 onTap: () async {
-                                                                                  await launchURL('https://wa.me/{{currentItem.phone_}}');
+                                                                                  await launchURL('https://api.whatsapp.com/send?phone=${verticalListUsersRecord.phoneNumber}&text=Hola,%le%escribo%desde%Rent%Houses%soy%Admin');
                                                                                 },
                                                                                 child: FaIcon(
                                                                                   FontAwesomeIcons.whatsapp,
@@ -558,6 +559,51 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                               ),
                                                                             ],
                                                                           ),
+                                                                        ),
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.center,
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                'Is Admin',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Poppins',
+                                                                                      fontSize: 12.0,
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                            Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Theme(
+                                                                                  data: ThemeData(
+                                                                                    checkboxTheme: CheckboxThemeData(
+                                                                                      shape: CircleBorder(),
+                                                                                    ),
+                                                                                    unselectedWidgetColor: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  ),
+                                                                                  child: Checkbox(
+                                                                                    value: _model.checkboxValueMap[verticalListUsersRecord] ??= verticalListUsersRecord.isAdmin,
+                                                                                    onChanged: (newValue) async {
+                                                                                      setState(() => _model.checkboxValueMap[verticalListUsersRecord] = newValue!);
+                                                                                      if (newValue!) {
+                                                                                        final usersUpdateData = createUsersRecordData(
+                                                                                          isAdmin: _model.checkboxValueMap[verticalListUsersRecord],
+                                                                                        );
+                                                                                        await verticalListUsersRecord.reference.update(usersUpdateData);
+                                                                                      }
+                                                                                    },
+                                                                                    activeColor: FlutterFlowTheme.of(context).secondary,
+                                                                                    checkColor: FlutterFlowTheme.of(context).info,
+                                                                                  ),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                       ],
                                                                     ),
@@ -582,7 +628,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                           .max,
                                                                   mainAxisAlignment:
                                                                       MainAxisAlignment
-                                                                          .center,
+                                                                          .spaceEvenly,
                                                                   children: [
                                                                     Padding(
                                                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -593,7 +639,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                       child:
                                                                           Text(
                                                                         verticalListUsersRecord
-                                                                            .displayName!,
+                                                                            .displayName,
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: GoogleFonts
@@ -642,7 +688,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                         child:
                                                                             Text(
                                                                           verticalListUsersRecord
-                                                                              .email!,
+                                                                              .email,
                                                                           style:
                                                                               GoogleFonts.getFont(
                                                                             'Roboto',

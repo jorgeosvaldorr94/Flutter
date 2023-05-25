@@ -368,7 +368,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     .doc(user.uid)
                                     .update(usersCreateData);
 
-                                context.pushNamedAuth('MyProfile', mounted);
+                                context.pushNamedAuth(
+                                    'MyProfile', context.mounted);
                               },
                               text: 'Create Account',
                               options: FFButtonOptions(

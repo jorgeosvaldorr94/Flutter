@@ -156,7 +156,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                                       },
                                       child: Icon(
                                         Icons.clear,
-                                        color: Color(0xFF262D34),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 20.0,
                                       ),
                                     )
@@ -231,7 +232,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                               _model.passwordVisibility
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
-                              color: Color(0xFF262D34),
+                              color: FlutterFlowTheme.of(context).primaryText,
                               size: 20.0,
                             ),
                           ),
@@ -265,7 +266,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                   return;
                                 }
 
-                                context.pushNamedAuth('Home', mounted);
+                                context.pushNamedAuth('Home', context.mounted);
                               },
                               text: 'Sign In',
                               options: FFButtonOptions(

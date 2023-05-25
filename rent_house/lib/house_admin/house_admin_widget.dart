@@ -341,15 +341,15 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                 .textController
                                                                 .text,
                                                             verticalListHouseRecord
-                                                                .name!,
+                                                                .name,
                                                             verticalListHouseRecord
-                                                                .city!,
+                                                                .city,
                                                             verticalListHouseRecord
-                                                                .municipality!,
+                                                                .municipality,
                                                             verticalListHouseRecord
-                                                                .locality!,
+                                                                .locality,
                                                             verticalListHouseRecord
-                                                                .price!) ??
+                                                                .price) ??
                                                         true,
                                                     child: Padding(
                                                       padding:
@@ -402,7 +402,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                           0.0),
                                                                   child: Hero(
                                                                     tag: verticalListHouseRecord
-                                                                        .image!,
+                                                                        .image,
                                                                     transitionOnUserGestures:
                                                                         true,
                                                                     child:
@@ -413,7 +413,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                       child: Image
                                                                           .network(
                                                                         verticalListHouseRecord
-                                                                            .image!,
+                                                                            .image,
                                                                         width:
                                                                             170.0,
                                                                         height:
@@ -523,7 +523,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                   child: Text(
                                                                                     formatNumber(
-                                                                                      verticalListHouseRecord.price!,
+                                                                                      verticalListHouseRecord.price,
                                                                                       formatType: FormatType.custom,
                                                                                       format: '\$ 0',
                                                                                       locale: '',
@@ -567,7 +567,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            verticalListHouseRecord.city!,
+                                                                            verticalListHouseRecord.city,
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: 'Roboto',
                                                                                   fontSize: 12.0,
@@ -584,7 +584,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                         child:
                                                                             Text(
                                                                           verticalListHouseRecord
-                                                                              .municipality!,
+                                                                              .municipality,
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
@@ -606,7 +606,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            verticalListHouseRecord.locality!,
+                                                                            verticalListHouseRecord.locality,
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: 'Roboto',
                                                                                   fontSize: 12.0,
@@ -633,7 +633,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                                 0.0),
                                                                             child:
                                                                                 Text(
-                                                                              verticalListHouseRecord.rentBy!,
+                                                                              verticalListHouseRecord.rentBy,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Poppins',
                                                                                     fontSize: 12.0,
@@ -667,7 +667,7 @@ class _HouseAdminWidgetState extends State<HouseAdminWidget>
                                                                           0.0),
                                                                   child: Text(
                                                                     verticalListHouseRecord
-                                                                        .name!,
+                                                                        .name,
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,

@@ -500,15 +500,15 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           _model.textController
                                                               .text,
                                                           verticalListHouseRecord
-                                                              .name!,
+                                                              .name,
                                                           verticalListHouseRecord
-                                                              .city!,
+                                                              .city,
                                                           verticalListHouseRecord
-                                                              .municipality!,
+                                                              .municipality,
                                                           verticalListHouseRecord
-                                                              .locality!,
+                                                              .locality,
                                                           verticalListHouseRecord
-                                                              .price!) ??
+                                                              .price) ??
                                                       true,
                                                   child: Padding(
                                                     padding:
@@ -639,7 +639,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     ),
                                                                     Text(
                                                                       verticalListHouseRecord
-                                                                          .name!,
+                                                                          .name,
                                                                       textAlign:
                                                                           TextAlign
                                                                               .center,
@@ -672,7 +672,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                       child:
                                                                           Text(
                                                                         verticalListHouseRecord
-                                                                            .city!,
+                                                                            .city,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
@@ -690,7 +690,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                       child:
                                                                           Text(
                                                                         verticalListHouseRecord
-                                                                            .municipality!,
+                                                                            .municipality,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
@@ -714,7 +714,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         child:
                                                                             Text(
                                                                           verticalListHouseRecord
-                                                                              .locality!,
+                                                                              .locality,
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
@@ -759,7 +759,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   formatNumber(
-                                                                                    verticalListHouseRecord.price!,
+                                                                                    verticalListHouseRecord.price,
                                                                                     formatType: FormatType.custom,
                                                                                     format: '\$ 0 ',
                                                                                     locale: '',
@@ -774,7 +774,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
                                                                                 child: Text(
-                                                                                  verticalListHouseRecord.currency!,
+                                                                                  verticalListHouseRecord.currency,
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Poppins',
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -809,7 +809,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            verticalListHouseRecord.rentBy!,
+                                                                            verticalListHouseRecord.rentBy,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Poppins',
                                                                                   fontSize: 12.0,
@@ -916,7 +916,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             Padding(
                                                                               padding: EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 0.0, 0.0),
                                                                               child: Text(
-                                                                                verticalListHouseRecord.likes!.toString(),
+                                                                                verticalListHouseRecord.likes.toString(),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Poppins',
                                                                                       fontSize: 10.0,
@@ -945,7 +945,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             Padding(
                                                                               padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
-                                                                                verticalListHouseRecord.views!.toString(),
+                                                                                verticalListHouseRecord.views.toString(),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Poppins',
                                                                                       fontSize: 10.0,

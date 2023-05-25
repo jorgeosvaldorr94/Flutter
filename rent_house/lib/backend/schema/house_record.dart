@@ -1,118 +1,195 @@
 import 'dart:async';
 
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+
 import 'index.dart';
-import 'serializers.dart';
-import 'package:built_value/built_value.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
-part 'house_record.g.dart';
+class HouseRecord extends FirestoreRecord {
+  HouseRecord._(
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
+    _initializeFields();
+  }
 
-abstract class HouseRecord implements Built<HouseRecord, HouseRecordBuilder> {
-  static Serializer<HouseRecord> get serializer => _$houseRecordSerializer;
+  // "name" field.
+  String? _name;
+  String get name => _name ?? '';
+  bool hasName() => _name != null;
 
-  String? get name;
+  // "description" field.
+  String? _description;
+  String get description => _description ?? '';
+  bool hasDescription() => _description != null;
 
-  String? get description;
+  // "specifications" field.
+  String? _specifications;
+  String get specifications => _specifications ?? '';
+  bool hasSpecifications() => _specifications != null;
 
-  String? get specifications;
+  // "price" field.
+  double? _price;
+  double get price => _price ?? 0.0;
+  bool hasPrice() => _price != null;
 
-  double? get price;
+  // "created_at" field.
+  DateTime? _createdAt;
+  DateTime? get createdAt => _createdAt;
+  bool hasCreatedAt() => _createdAt != null;
 
-  @BuiltValueField(wireName: 'created_at')
-  DateTime? get createdAt;
+  // "modified_at" field.
+  DateTime? _modifiedAt;
+  DateTime? get modifiedAt => _modifiedAt;
+  bool hasModifiedAt() => _modifiedAt != null;
 
-  @BuiltValueField(wireName: 'modified_at')
-  DateTime? get modifiedAt;
+  // "on_sale" field.
+  bool? _onSale;
+  bool get onSale => _onSale ?? false;
+  bool hasOnSale() => _onSale != null;
 
-  @BuiltValueField(wireName: 'on_sale')
-  bool? get onSale;
+  // "sale_price" field.
+  double? _salePrice;
+  double get salePrice => _salePrice ?? 0.0;
+  bool hasSalePrice() => _salePrice != null;
 
-  @BuiltValueField(wireName: 'sale_price')
-  double? get salePrice;
+  // "quantity" field.
+  int? _quantity;
+  int get quantity => _quantity ?? 0;
+  bool hasQuantity() => _quantity != null;
 
-  int? get quantity;
+  // "city" field.
+  String? _city;
+  String get city => _city ?? '';
+  bool hasCity() => _city != null;
 
-  String? get city;
+  // "municipality" field.
+  String? _municipality;
+  String get municipality => _municipality ?? '';
+  bool hasMunicipality() => _municipality != null;
 
-  String? get municipality;
+  // "locality" field.
+  String? _locality;
+  String get locality => _locality ?? '';
+  bool hasLocality() => _locality != null;
 
-  String? get locality;
+  // "image" field.
+  String? _image;
+  String get image => _image ?? '';
+  bool hasImage() => _image != null;
 
-  String? get image;
+  // "images" field.
+  List<String>? _images;
+  List<String> get images => _images ?? const [];
+  bool hasImages() => _images != null;
 
-  BuiltList<String>? get images;
+  // "type" field.
+  String? _type;
+  String get type => _type ?? '';
+  bool hasType() => _type != null;
 
-  String? get type;
+  // "created_by" field.
+  String? _createdBy;
+  String get createdBy => _createdBy ?? '';
+  bool hasCreatedBy() => _createdBy != null;
 
-  @BuiltValueField(wireName: 'created_by')
-  String? get createdBy;
+  // "created_by_name" field.
+  String? _createdByName;
+  String get createdByName => _createdByName ?? '';
+  bool hasCreatedByName() => _createdByName != null;
 
-  @BuiltValueField(wireName: 'created_by_name')
-  String? get createdByName;
+  // "views" field.
+  int? _views;
+  int get views => _views ?? 0;
+  bool hasViews() => _views != null;
 
-  int? get views;
+  // "favorites" field.
+  List<DocumentReference>? _favorites;
+  List<DocumentReference> get favorites => _favorites ?? const [];
+  bool hasFavorites() => _favorites != null;
 
-  BuiltList<DocumentReference>? get favorites;
+  // "isFav" field.
+  bool? _isFav;
+  bool get isFav => _isFav ?? false;
+  bool hasIsFav() => _isFav != null;
 
-  bool? get isFav;
+  // "likes" field.
+  int? _likes;
+  int get likes => _likes ?? 0;
+  bool hasLikes() => _likes != null;
 
-  int? get likes;
+  // "contact" field.
+  String? _contact;
+  String get contact => _contact ?? '';
+  bool hasContact() => _contact != null;
 
-  String? get contact;
+  // "imageAlt" field.
+  String? _imageAlt;
+  String get imageAlt => _imageAlt ?? '';
+  bool hasImageAlt() => _imageAlt != null;
 
-  String? get imageAlt;
+  // "currency" field.
+  String? _currency;
+  String get currency => _currency ?? '';
+  bool hasCurrency() => _currency != null;
 
-  String? get currency;
+  // "rentBy" field.
+  String? _rentBy;
+  String get rentBy => _rentBy ?? '';
+  bool hasRentBy() => _rentBy != null;
 
-  String? get rentBy;
-
-  @BuiltValueField(wireName: kDocumentReferenceField)
-  DocumentReference? get ffRef;
-  DocumentReference get reference => ffRef!;
-
-  static void _initializeBuilder(HouseRecordBuilder builder) => builder
-    ..name = ''
-    ..description = ''
-    ..specifications = ''
-    ..price = 0.0
-    ..onSale = false
-    ..salePrice = 0.0
-    ..quantity = 0
-    ..city = ''
-    ..municipality = ''
-    ..locality = ''
-    ..image = ''
-    ..images = ListBuilder()
-    ..type = ''
-    ..createdBy = ''
-    ..createdByName = ''
-    ..views = 0
-    ..favorites = ListBuilder()
-    ..isFav = false
-    ..likes = 0
-    ..contact = ''
-    ..imageAlt = ''
-    ..currency = ''
-    ..rentBy = '';
+  void _initializeFields() {
+    _name = snapshotData['name'] as String?;
+    _description = snapshotData['description'] as String?;
+    _specifications = snapshotData['specifications'] as String?;
+    _price = castToType<double>(snapshotData['price']);
+    _createdAt = snapshotData['created_at'] as DateTime?;
+    _modifiedAt = snapshotData['modified_at'] as DateTime?;
+    _onSale = snapshotData['on_sale'] as bool?;
+    _salePrice = castToType<double>(snapshotData['sale_price']);
+    _quantity = snapshotData['quantity'] as int?;
+    _city = snapshotData['city'] as String?;
+    _municipality = snapshotData['municipality'] as String?;
+    _locality = snapshotData['locality'] as String?;
+    _image = snapshotData['image'] as String?;
+    _images = getDataList(snapshotData['images']);
+    _type = snapshotData['type'] as String?;
+    _createdBy = snapshotData['created_by'] as String?;
+    _createdByName = snapshotData['created_by_name'] as String?;
+    _views = snapshotData['views'] as int?;
+    _favorites = getDataList(snapshotData['favorites']);
+    _isFav = snapshotData['isFav'] as bool?;
+    _likes = snapshotData['likes'] as int?;
+    _contact = snapshotData['contact'] as String?;
+    _imageAlt = snapshotData['imageAlt'] as String?;
+    _currency = snapshotData['currency'] as String?;
+    _rentBy = snapshotData['rentBy'] as String?;
+  }
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('house');
 
-  static Stream<HouseRecord> getDocument(DocumentReference ref) => ref
-      .snapshots()
-      .map((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Stream<HouseRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => HouseRecord.fromSnapshot(s));
 
-  static Future<HouseRecord> getDocumentOnce(DocumentReference ref) => ref
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Future<HouseRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => HouseRecord.fromSnapshot(s));
 
-  HouseRecord._();
-  factory HouseRecord([void Function(HouseRecordBuilder) updates]) =
-      _$HouseRecord;
+  static HouseRecord fromSnapshot(DocumentSnapshot snapshot) => HouseRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
 
   static HouseRecord getDocumentFromData(
-          Map<String, dynamic> data, DocumentReference reference) =>
-      serializers.deserializeWith(serializer,
-          {...mapFromFirestore(data), kDocumentReferenceField: reference})!;
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      HouseRecord._(reference, mapFromFirestore(data));
+
+  @override
+  String toString() =>
+      'HouseRecord(reference: ${reference.path}, data: $snapshotData)';
 }
 
 Map<String, dynamic> createHouseRecordData({
@@ -140,36 +217,32 @@ Map<String, dynamic> createHouseRecordData({
   String? currency,
   String? rentBy,
 }) {
-  final firestoreData = serializers.toFirestore(
-    HouseRecord.serializer,
-    HouseRecord(
-      (h) => h
-        ..name = name
-        ..description = description
-        ..specifications = specifications
-        ..price = price
-        ..createdAt = createdAt
-        ..modifiedAt = modifiedAt
-        ..onSale = onSale
-        ..salePrice = salePrice
-        ..quantity = quantity
-        ..city = city
-        ..municipality = municipality
-        ..locality = locality
-        ..image = image
-        ..images = null
-        ..type = type
-        ..createdBy = createdBy
-        ..createdByName = createdByName
-        ..views = views
-        ..favorites = null
-        ..isFav = isFav
-        ..likes = likes
-        ..contact = contact
-        ..imageAlt = imageAlt
-        ..currency = currency
-        ..rentBy = rentBy,
-    ),
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'name': name,
+      'description': description,
+      'specifications': specifications,
+      'price': price,
+      'created_at': createdAt,
+      'modified_at': modifiedAt,
+      'on_sale': onSale,
+      'sale_price': salePrice,
+      'quantity': quantity,
+      'city': city,
+      'municipality': municipality,
+      'locality': locality,
+      'image': image,
+      'type': type,
+      'created_by': createdBy,
+      'created_by_name': createdByName,
+      'views': views,
+      'isFav': isFav,
+      'likes': likes,
+      'contact': contact,
+      'imageAlt': imageAlt,
+      'currency': currency,
+      'rentBy': rentBy,
+    }.withoutNulls,
   );
 
   return firestoreData;

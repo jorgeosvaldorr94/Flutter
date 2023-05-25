@@ -5,7 +5,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
-import '../../backend/backend.dart';
+import '/backend/backend.dart';
 
 import '../../auth/base_auth_user_provider.dart';
 
@@ -87,7 +87,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Details',
           path: '/details',
           asyncParams: {
-            'itemHouse': getDoc(['house'], HouseRecord.serializer),
+            'itemHouse': getDoc(['house'], HouseRecord.fromSnapshot),
           },
           builder: (context, params) => DetailsWidget(
             itemHouse: params.getParam('itemHouse', ParamType.Document),
@@ -132,7 +132,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'EditProduct',
           path: '/editProduct',
           asyncParams: {
-            'itemEditProduct': getDoc(['house'], HouseRecord.serializer),
+            'itemEditProduct': getDoc(['house'], HouseRecord.fromSnapshot),
           },
           builder: (context, params) => EditProductWidget(
             itemEditProduct:
@@ -298,7 +298,8 @@ class FFParameters {
       return param;
     }
     // Return serialized value.
-    return deserializeParam<T>(param, type, isList, collectionNamePath);
+    return deserializeParam<T>(param, type, isList,
+        collectionNamePath: collectionNamePath);
   }
 }
 

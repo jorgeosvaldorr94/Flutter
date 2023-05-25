@@ -40,7 +40,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
     _model.yourTitleController ??=
         TextEditingController(text: widget.itemEditProduct!.name);
     _model.yourPriceController ??=
-        TextEditingController(text: widget.itemEditProduct!.price?.toString());
+        TextEditingController(text: widget.itemEditProduct!.price.toString());
     _model.yourCityController ??=
         TextEditingController(text: widget.itemEditProduct!.city);
     _model.yourContactController ??=
@@ -231,7 +231,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                       .update(houseUpdateData);
                                 },
                                 child: Image.network(
-                                  widget.itemEditProduct!.image!,
+                                  widget.itemEditProduct!.image,
                                   width: 200.0,
                                   height: 180.0,
                                   fit: BoxFit.cover,

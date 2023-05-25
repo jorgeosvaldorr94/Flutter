@@ -314,15 +314,15 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                                 .textController
                                                                 .text,
                                                             verticalListHouseRecord
-                                                                .name!,
+                                                                .name,
                                                             verticalListHouseRecord
-                                                                .city!,
+                                                                .city,
                                                             verticalListHouseRecord
-                                                                .municipality!,
+                                                                .municipality,
                                                             verticalListHouseRecord
-                                                                .locality!,
+                                                                .locality,
                                                             verticalListHouseRecord
-                                                                .price!) ??
+                                                                .price) ??
                                                         true,
                                                     child: Padding(
                                                       padding:
@@ -375,7 +375,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                                           0.0),
                                                                   child: Hero(
                                                                     tag: verticalListHouseRecord
-                                                                        .image!,
+                                                                        .image,
                                                                     transitionOnUserGestures:
                                                                         true,
                                                                     child:
@@ -386,7 +386,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                                       child: Image
                                                                           .network(
                                                                         verticalListHouseRecord
-                                                                            .image!,
+                                                                            .image,
                                                                         width:
                                                                             150.0,
                                                                         height:
@@ -526,7 +526,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                   child: Text(
                                                                                     formatNumber(
-                                                                                      verticalListHouseRecord.price!,
+                                                                                      verticalListHouseRecord.price,
                                                                                       formatType: FormatType.custom,
                                                                                       format: '\$ 0 ',
                                                                                       locale: '',
@@ -570,7 +570,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            verticalListHouseRecord.city!,
+                                                                            verticalListHouseRecord.city,
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -589,7 +589,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                                         child:
                                                                             Text(
                                                                           verticalListHouseRecord
-                                                                              .municipality!,
+                                                                              .municipality,
                                                                           textAlign:
                                                                               TextAlign.center,
                                                                           style: FlutterFlowTheme.of(context)
@@ -613,7 +613,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            verticalListHouseRecord.locality!,
+                                                                            verticalListHouseRecord.locality,
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -648,7 +648,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                                           0.0),
                                                                   child: Text(
                                                                     verticalListHouseRecord
-                                                                        .name!,
+                                                                        .name,
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,

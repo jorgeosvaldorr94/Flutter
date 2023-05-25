@@ -340,15 +340,15 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                 .textController
                                                                 .text,
                                                             verticalListHouseRecord
-                                                                .name!,
+                                                                .name,
                                                             verticalListHouseRecord
-                                                                .city!,
+                                                                .city,
                                                             verticalListHouseRecord
-                                                                .municipality!,
+                                                                .municipality,
                                                             verticalListHouseRecord
-                                                                .locality!,
+                                                                .locality,
                                                             verticalListHouseRecord
-                                                                .price!) ??
+                                                                .price) ??
                                                         true,
                                                     child: Padding(
                                                       padding:
@@ -437,7 +437,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                             0.0),
                                                                     child: Hero(
                                                                       tag: verticalListHouseRecord
-                                                                          .image!,
+                                                                          .image,
                                                                       transitionOnUserGestures:
                                                                           true,
                                                                       child:
@@ -447,7 +447,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                         child: Image
                                                                             .network(
                                                                           verticalListHouseRecord
-                                                                              .image!,
+                                                                              .image,
                                                                           width:
                                                                               150.0,
                                                                           height:
@@ -479,7 +479,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            verticalListHouseRecord.name!,
+                                                                            verticalListHouseRecord.name,
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
@@ -490,7 +490,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                         ),
                                                                         Text(
                                                                           verticalListHouseRecord
-                                                                              .city!,
+                                                                              .city,
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
@@ -506,7 +506,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            verticalListHouseRecord.municipality!,
+                                                                            verticalListHouseRecord.municipality,
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: 'Roboto',
                                                                                   fontSize: 10.0,
@@ -526,7 +526,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                                 0.0),
                                                                             child:
                                                                                 Text(
-                                                                              verticalListHouseRecord.locality!,
+                                                                              verticalListHouseRecord.locality,
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: 'Roboto',
                                                                                     fontSize: 10.0,
@@ -560,7 +560,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                     child: Text(
                                                                                       formatNumber(
-                                                                                        verticalListHouseRecord.price!,
+                                                                                        verticalListHouseRecord.price,
                                                                                         formatType: FormatType.custom,
                                                                                         format: '\$ 0',
                                                                                         locale: '',
@@ -636,7 +636,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                             Padding(
                                                                               padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
-                                                                                verticalListHouseRecord.rentBy!,
+                                                                                verticalListHouseRecord.rentBy,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Poppins',
                                                                                       fontSize: 12.0,
@@ -664,7 +664,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                             ),
                                                                             Text(
                                                                               valueOrDefault<String>(
-                                                                                verticalListHouseRecord.views?.toString(),
+                                                                                verticalListHouseRecord.views.toString(),
                                                                                 '0',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(

@@ -83,6 +83,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: SafeArea(
+        top: true,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -126,7 +127,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                       await authManager.signOut();
                       GoRouter.of(context).clearRedirectLocation();
 
-                      context.pushNamedAuth('Home', mounted);
+                      context.pushNamedAuth('Home', context.mounted);
                     },
                     child: Icon(
                       Icons.login_outlined,
