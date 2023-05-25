@@ -477,7 +477,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                     child: FFButtonWidget(
                       onPressed: () async {
                         await launchURL(
-                            'https://api.whatsapp.com/send?phone=${widget.itemHouse!.contact}&text=Hola,%le%escribo%desde%Rent%Houses%soy%${currentUserDisplayName}');
+                            'https://api.whatsapp.com/send?phone=${widget.itemHouse!.contact}&text=Hola, le escribo desde Rent Houses APK, soy  ${currentUserDisplayName}');
                       },
                       text: '',
                       icon: FaIcon(

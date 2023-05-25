@@ -15,6 +15,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:octo_image/octo_image.dart';
 import 'package:provider/provider.dart';
 import 'home_model.dart';
 export 'home_model.dart';
@@ -330,15 +331,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         size: 40.0,
                                       ),
                                     ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
-                                    child: Icon(
-                                      Icons.favorite_border,
-                                      color: Color(0x00E0E0E0),
-                                      size: 40.0,
-                                    ),
-                                  ),
                                   if (loggedIn)
                                     Expanded(
                                       child: Align(

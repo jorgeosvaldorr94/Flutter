@@ -228,8 +228,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                     .update(usersUpdateData);
                               },
                               child: Container(
-                                width: 150.0,
-                                height: 150.0,
+                                width: 160.0,
+                                height: 160.0,
                                 clipBehavior: Clip.antiAlias,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,

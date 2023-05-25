@@ -13,19 +13,19 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'own_product_model.dart';
-export 'own_product_model.dart';
+import 'my_products_model.dart';
+export 'my_products_model.dart';
 
-class OwnProductWidget extends StatefulWidget {
-  const OwnProductWidget({Key? key}) : super(key: key);
+class MyProductsWidget extends StatefulWidget {
+  const MyProductsWidget({Key? key}) : super(key: key);
 
   @override
-  _OwnProductWidgetState createState() => _OwnProductWidgetState();
+  _MyProductsWidgetState createState() => _MyProductsWidgetState();
 }
 
-class _OwnProductWidgetState extends State<OwnProductWidget>
+class _MyProductsWidgetState extends State<MyProductsWidget>
     with TickerProviderStateMixin {
-  late OwnProductModel _model;
+  late MyProductsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -33,7 +33,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => OwnProductModel());
+    _model = createModel(context, () => MyProductsModel());
 
     _model.textController ??= TextEditingController();
   }
@@ -370,7 +370,7 @@ class _OwnProductWidgetState extends State<OwnProductWidget>
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
-                                                                          0.0,
+                                                                          5.0,
                                                                           0.0,
                                                                           0.0),
                                                                   child: Hero(

@@ -550,7 +550,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('OwnProduct');
+                        context.pushNamed('MyProducts');
                       },
                       child: Container(
                         width: double.infinity,

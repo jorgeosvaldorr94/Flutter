@@ -70,13 +70,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? HomeWidget() : InitialWidget(),
+          appStateNotifier.loggedIn ? HomeWidget() : TransitionWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomeWidget() : InitialWidget(),
+              appStateNotifier.loggedIn ? HomeWidget() : TransitionWidget(),
         ),
         FFRoute(
           name: 'Home',
@@ -124,9 +124,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => UserAdminWidget(),
         ),
         FFRoute(
-          name: 'OwnProduct',
-          path: '/ownProduct',
-          builder: (context, params) => OwnProductWidget(),
+          name: 'MyProducts',
+          path: '/myProducts',
+          builder: (context, params) => MyProductsWidget(),
         ),
         FFRoute(
           name: 'EditProduct',
@@ -163,6 +163,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Info',
           path: '/info',
           builder: (context, params) => InfoWidget(),
+        ),
+        FFRoute(
+          name: 'Transition',
+          path: '/transition',
+          builder: (context, params) => TransitionWidget(),
+        ),
+        FFRoute(
+          name: 'EditProductCopy',
+          path: '/editProductCopy',
+          asyncParams: {
+            'itemEditProduct': getDoc(['house'], HouseRecord.fromSnapshot),
+          },
+          builder: (context, params) => EditProductCopyWidget(
+            itemEditProduct:
+                params.getParam('itemEditProduct', ParamType.Document),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
@@ -332,7 +348,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/initial';
+            return '/transition';
           }
           return null;
         },

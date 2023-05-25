@@ -432,7 +432,7 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             25.0,
-                                                                            0.0,
+                                                                            5.0,
                                                                             0.0,
                                                                             0.0),
                                                                     child: Hero(
@@ -449,9 +449,9 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
                                                                           verticalListHouseRecord
                                                                               .image,
                                                                           width:
-                                                                              150.0,
+                                                                              120.0,
                                                                           height:
-                                                                              150.0,
+                                                                              120.0,
                                                                           fit: BoxFit
                                                                               .cover,
                                                                         ),

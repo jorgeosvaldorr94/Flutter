@@ -12,11 +12,11 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'edit_product_model.dart';
-export 'edit_product_model.dart';
+import 'edit_product_copy_model.dart';
+export 'edit_product_copy_model.dart';
 
-class EditProductWidget extends StatefulWidget {
-  const EditProductWidget({
+class EditProductCopyWidget extends StatefulWidget {
+  const EditProductCopyWidget({
     Key? key,
     this.itemEditProduct,
   }) : super(key: key);
@@ -24,18 +24,18 @@ class EditProductWidget extends StatefulWidget {
   final HouseRecord? itemEditProduct;
 
   @override
-  _EditProductWidgetState createState() => _EditProductWidgetState();
+  _EditProductCopyWidgetState createState() => _EditProductCopyWidgetState();
 }
 
-class _EditProductWidgetState extends State<EditProductWidget> {
-  late EditProductModel _model;
+class _EditProductCopyWidgetState extends State<EditProductCopyWidget> {
+  late EditProductCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EditProductModel());
+    _model = createModel(context, () => EditProductCopyModel());
 
     _model.yourTitleController ??=
         TextEditingController(text: widget.itemEditProduct!.name);
@@ -173,7 +173,6 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                     context: context,
                                     imageQuality: 60,
                                     allowPhoto: true,
-                                    includeBlurHash: true,
                                   );
                                   if (selectedMedia != null &&
                                       selectedMedia.every((m) =>
@@ -185,11 +184,6 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                         <FFUploadedFile>[];
                                     var downloadUrls = <String>[];
                                     try {
-                                      showUploadMessage(
-                                        context,
-                                        'Uploading file...',
-                                        showLoading: true,
-                                      );
                                       selectedUploadedFiles = selectedMedia
                                           .map((m) => FFUploadedFile(
                                                 name: m.storagePath
@@ -212,8 +206,6 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                           .map((u) => u!)
                                           .toList();
                                     } finally {
-                                      ScaffoldMessenger.of(context)
-                                          .hideCurrentSnackBar();
                                       _model.isDataUploading = false;
                                     }
                                     if (selectedUploadedFiles.length ==
@@ -226,27 +218,21 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                         _model.uploadedFileUrl =
                                             downloadUrls.first;
                                       });
-                                      showUploadMessage(context, 'Success!');
                                     } else {
                                       setState(() {});
-                                      showUploadMessage(
-                                          context, 'Failed to upload data');
                                       return;
                                     }
                                   }
 
                                   final houseUpdateData = createHouseRecordData(
-                                    imageAlt: _model.uploadedFileUrl,
                                     image: _model.uploadedFileUrl,
+                                    imageAlt: widget.itemEditProduct!.image,
                                   );
                                   await widget.itemEditProduct!.reference
                                       .update(houseUpdateData);
                                 },
                                 child: Image.network(
-                                  valueOrDefault<String>(
-                                    widget.itemEditProduct!.image,
-                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/rent-house-rubctg/assets/nzpikfn3jrh3/Logo_Rent_House.png',
-                                  ),
+                                  widget.itemEditProduct!.image,
                                   width: 200.0,
                                   height: 180.0,
                                   fit: BoxFit.cover,

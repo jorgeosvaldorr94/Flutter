@@ -23,11 +23,6 @@ class UserAdminModel extends FlutterFlowModel {
   // State field(s) for TextField widget.
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // State field(s) for Checkbox widget.
-
-  Map<UsersRecord, bool> checkboxValueMap = {};
-  List<UsersRecord> get checkboxCheckedItems =>
-      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
 
   /// Initialization and disposal methods.
 

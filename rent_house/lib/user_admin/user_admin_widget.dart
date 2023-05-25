@@ -549,7 +549,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                                 hoverColor: Colors.transparent,
                                                                                 highlightColor: Colors.transparent,
                                                                                 onTap: () async {
-                                                                                  await launchURL('https://api.whatsapp.com/send?phone=${verticalListUsersRecord.phoneNumber}&text=Hola,%le%escribo%desde%Rent%Houses%soy%Admin');
+                                                                                  await launchURL('https://api.whatsapp.com/send?phone=${verticalListUsersRecord.phoneNumber}&text=Hola, le escribo desde Rent Houses soy Admin');
                                                                                 },
                                                                                 child: FaIcon(
                                                                                   FontAwesomeIcons.whatsapp,
@@ -567,7 +567,7 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                               MainAxisAlignment.center,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 4.0, 0.0),
                                                                               child: Text(
                                                                                 'Is Admin',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -579,28 +579,86 @@ class _UserAdminWidgetState extends State<UserAdminWidget>
                                                                             Column(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
-                                                                                Theme(
-                                                                                  data: ThemeData(
-                                                                                    checkboxTheme: CheckboxThemeData(
-                                                                                      shape: CircleBorder(),
+                                                                                if (verticalListUsersRecord.isAdmin)
+                                                                                  Container(
+                                                                                    width: 45.0,
+                                                                                    height: 25.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: FlutterFlowTheme.of(context).accent4,
+                                                                                      borderRadius: BorderRadius.circular(25.0),
+                                                                                      shape: BoxShape.rectangle,
+                                                                                      border: Border.all(
+                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      ),
                                                                                     ),
-                                                                                    unselectedWidgetColor: FlutterFlowTheme.of(context).secondaryText,
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                      children: [
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 0.0, 0.0),
+                                                                                          child: InkWell(
+                                                                                            splashColor: Colors.transparent,
+                                                                                            focusColor: Colors.transparent,
+                                                                                            hoverColor: Colors.transparent,
+                                                                                            highlightColor: Colors.transparent,
+                                                                                            onTap: () async {
+                                                                                              final usersUpdateData = createUsersRecordData(
+                                                                                                isAdmin: false,
+                                                                                              );
+                                                                                              await verticalListUsersRecord.reference.update(usersUpdateData);
+                                                                                            },
+                                                                                            child: Icon(
+                                                                                              Icons.check_circle,
+                                                                                              color: FlutterFlowTheme.of(context).secondary,
+                                                                                              size: 24.0,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
                                                                                   ),
-                                                                                  child: Checkbox(
-                                                                                    value: _model.checkboxValueMap[verticalListUsersRecord] ??= verticalListUsersRecord.isAdmin,
-                                                                                    onChanged: (newValue) async {
-                                                                                      setState(() => _model.checkboxValueMap[verticalListUsersRecord] = newValue!);
-                                                                                      if (newValue!) {
-                                                                                        final usersUpdateData = createUsersRecordData(
-                                                                                          isAdmin: _model.checkboxValueMap[verticalListUsersRecord],
-                                                                                        );
-                                                                                        await verticalListUsersRecord.reference.update(usersUpdateData);
-                                                                                      }
-                                                                                    },
-                                                                                    activeColor: FlutterFlowTheme.of(context).secondary,
-                                                                                    checkColor: FlutterFlowTheme.of(context).info,
+                                                                                if (!verticalListUsersRecord.isAdmin)
+                                                                                  Container(
+                                                                                    width: 45.0,
+                                                                                    height: 25.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: FlutterFlowTheme.of(context).accent4,
+                                                                                      borderRadius: BorderRadius.circular(25.0),
+                                                                                      shape: BoxShape.rectangle,
+                                                                                      border: Border.all(
+                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                      ),
+                                                                                    ),
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.end,
+                                                                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                      children: [
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                          child: InkWell(
+                                                                                            splashColor: Colors.transparent,
+                                                                                            focusColor: Colors.transparent,
+                                                                                            hoverColor: Colors.transparent,
+                                                                                            highlightColor: Colors.transparent,
+                                                                                            onTap: () async {
+                                                                                              final usersUpdateData = createUsersRecordData(
+                                                                                                isAdmin: true,
+                                                                                              );
+                                                                                              await verticalListUsersRecord.reference.update(usersUpdateData);
+                                                                                            },
+                                                                                            child: FaIcon(
+                                                                                              FontAwesomeIcons.solidTimesCircle,
+                                                                                              color: FlutterFlowTheme.of(context).alternate,
+                                                                                              size: 20.0,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
                                                                                   ),
-                                                                                ),
                                                                               ],
                                                                             ),
                                                                           ],
